@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 432076655015999453}
   - component: {fileID: 8084062535913633177}
   - component: {fileID: 7995332941023554478}
-  - component: {fileID: 1194267505043332161}
-  - component: {fileID: 3444962729880941744}
   - component: {fileID: 9140985152370509380}
+  - component: {fileID: 4991480787619880961}
+  - component: {fileID: 8515019379777164475}
+  - component: {fileID: 319627374080751299}
+  - component: {fileID: 32814571535754807}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Enemy
@@ -125,7 +127,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -136,8 +138,53 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &1194267505043332161
+  m_Constraints: 4
+--- !u!61 &9140985152370509380
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852473054456473759}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.09838104, y: -0.26917362}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.4615386, y: 2.4615386}
+    newSize: {x: 2.4615386, y: 2.4615386}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.1470184, y: 1.9231911}
+  m_EdgeRadius: 0
+--- !u!114 &4991480787619880961
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,34 +193,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 852473054456473759}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abf4d686ddd0b424e926b0ecbba20ed1, type: 3}
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health_enemy: 100
-  attackDamage: 10
-  moveSpeed: 2
-  attackRange: 1.5
-  attackCooldown: 1
-  chaseDistance: 5
-  stopDistance: 2
-  distanceToPlayer: 0
-  distanceToStart: 0
-  IsAttacking: 0
-  IsWalking: 0
-  IsAttackUp: 0
-  IsAttackDown: 0
-  IsAttackLeft: 0
-  IsAttackRight: 0
-  IsWalkUp: 0
-  IsWalkDown: 0
-  IsWalkLeft: 0
-  IsWalkRight: 0
-  IsDeathUp: 0
-  IsDeathDown: 0
-  IsDeathLeft: 0
-  IsDeathRight: 0
-  IsStop: 0
---- !u!114 &3444962729880941744
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
+--- !u!114 &8515019379777164475
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -187,8 +226,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health_enemy: 100
   attackDamage: 10
---- !u!61 &9140985152370509380
-BoxCollider2D:
+--- !u!114 &319627374080751299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852473054456473759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf4d686ddd0b424e926b0ecbba20ed1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  nextWaypointDistance: 0.1
+  currentWaypoint: 0
+  reachedEndOfPath: 0
+  seeker: {fileID: 4991480787619880961}
+  rb_2: {fileID: 0}
+  direction: {x: 0, y: 0}
+  force: {x: 0, y: 0}
+  distanceToPath: 0
+  moveSpeed: 2
+  attackRange: 2.5
+  attackCooldown: 1
+  chaseDistance: 5
+  stopDistance: 0.1
+  distanceToPlayer: 0
+  distanceToStart: 0
+  distance: {x: 0, y: 0}
+  Health_: 0
+  IsAttacking: 0
+  IsWalking: 0
+  IsAttackUp: 0
+  IsAttackDown: 0
+  IsAttackLeft: 0
+  IsAttackRight: 0
+  IsWalkUp: 0
+  IsWalkDown: 0
+  IsWalkLeft: 0
+  IsWalkRight: 0
+  IsDeathUp: 1
+  IsDeathDown: 0
+  IsDeathLeft: 0
+  IsDeathRight: 0
+  IsStop: 0
+--- !u!70 &32814571535754807
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -219,16 +303,6 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.13217735, y: -0.17623758}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.4615386, y: 2.4615386}
-    newSize: {x: 2.4615386, y: 2.4615386}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.3159904, y: 2.1090631}
-  m_EdgeRadius: 0
+  m_Offset: {x: -0.08545996, y: -1.0631586}
+  m_Size: {x: 1.1966957, y: 0.32155326}
+  m_Direction: 1

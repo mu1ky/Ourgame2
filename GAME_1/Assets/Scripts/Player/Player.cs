@@ -39,8 +39,11 @@ public class Player : MonoBehaviour
     private bool isShootingDown;
     private bool isShootingLeft;
     private bool isShootingRight;
+
     public GameObject _gun;
-    public bool IsCollider = false;
+    public bool isFindKey = false;
+    public byte count_Key = 0;
+
     public bool IsAttacking_()
     {
         return isAttacking_;
@@ -117,14 +120,16 @@ public class Player : MonoBehaviour
     {
         return !isShooting;
     }
-
+    public bool IsFindKey_()
+    {
+        return isFindKey;
+    }
     private void HandleMovement()
     {
         speed_to_axis = inputVector * (speed_player * Time.fixedDeltaTime);
         rb.MovePosition(rb.position + speed_to_axis);
         inputVector = inputVector.normalized;
     }
-
     private void Awake()
     {
         Instance = this;
@@ -133,6 +138,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         _gun.SetActive(false);
+        isFindKey = false;
     }
     private void FixedUpdate()
     {
@@ -292,7 +298,6 @@ public class Player : MonoBehaviour
             isShootingRight = true;
         }
     }
-
     public void TakeDamage_hero(float damage)
     {
         health_hero -= damage; // Уменьшаем здоровье
@@ -303,7 +308,6 @@ public class Player : MonoBehaviour
             Die(); // Вызываем метод смерти, если здоровье ниже или равно нулю
         }
     }
-
     private void Die()
     {
         Debug.Log("Player has died!");
@@ -311,39 +315,53 @@ public class Player : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        isAttacking_ = true;
-        if (Time.time >= lastAttackTime_1 + attackCooldown_1)
+        if (collision.gameObject.tag == "Enemy")
         {
-            if ((collision.gameObject.tag == "Enemy") && (collision.gameObject.GetComponent<Zombie>() != null))
+            isAttacking_ = true;
+            if (Time.time >= lastAttackTime_1 + attackCooldown_1)
             {
-                Enemy_1 en = collision.gameObject.GetComponent<Enemy_1>();
-                if (en != null)
+                if ((collision.gameObject.tag == "Enemy") && (collision.gameObject.GetComponent<Zombie>() != null))
                 {
-                    Debug.Log("Attack! Damage: " + en.attackDamage);
-                    TakeDamage_hero(en.attackDamage);
+                    Enemy_1 en = collision.gameObject.GetComponent<Enemy_1>();
+                    if (en != null)
+                    {
+                        Debug.Log("Attack! Damage: " + en.attackDamage);
+                        TakeDamage_hero(en.attackDamage);
+                    }
                 }
+                lastAttackTime_1 = Time.time;
             }
-            lastAttackTime_1 = Time.time;
+        }
+        else if (collision.gameObject.tag == "Key")
+        {
+            isFindKey = true;
+            count_Key =+ 1;
+            Destroy(collision.gameObject, 0.5f);
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Time.time >= lastAttackTime_1 + attackCooldown_1)
+        if (collision.gameObject.tag == "Enemy")
         {
-            if ((collision.gameObject.tag == "Enemy") && (collision.gameObject.GetComponent<Zombie>() != null))
+            isAttacking_ = true;
+            if (Time.time >= lastAttackTime_1 + attackCooldown_1)
             {
-                Enemy_1 en = collision.gameObject.GetComponent<Enemy_1>();
-                if (en != null)
+                if ((collision.gameObject.tag == "Enemy") && (collision.gameObject.GetComponent<Zombie>() != null))
                 {
-                    Debug.Log("Attack! Damage: " + en.attackDamage);
-                    TakeDamage_hero(en.attackDamage);
+                    Enemy_1 en = collision.gameObject.GetComponent<Enemy_1>();
+                    if (en != null)
+                    {
+                        Debug.Log("Attack! Damage: " + en.attackDamage);
+                        TakeDamage_hero(en.attackDamage);
+                    }
                 }
+                lastAttackTime_1 = Time.time;
             }
-            lastAttackTime_1 = Time.time;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        isAttacking_ = false;
+        if (collision.gameObject.tag == "Enemy")
+            isAttacking_ = false;
     }
 }

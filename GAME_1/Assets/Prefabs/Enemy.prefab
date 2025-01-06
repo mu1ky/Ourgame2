@@ -46,6 +46,8 @@ GameObject:
   - component: {fileID: 8752473211695331478}
   - component: {fileID: 5177164045022777684}
   - component: {fileID: 678871706663595089}
+  - component: {fileID: 5928027929161256805}
+  - component: {fileID: 5630874136722976381}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
@@ -133,8 +135,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1a5f0b02967a584bb8fbf5db72e154e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health_enemy: 100
+  target: {fileID: 0}
+  nextWaypointDistance: 0.1
+  currentWaypoint: 0
+  reachedEndOfPath: 0
+  seeker: {fileID: 5928027929161256805}
+  rb_2: {fileID: 0}
+  direction: {x: 0, y: 0}
+  force: {x: 0, y: 0}
+  distanceToPath: 0
   attackDamage: 10
+  stopDistance: 0.1
   directionToPlayer: {x: 0, y: 0}
   shootingDirection: {x: 0, y: 0}
   distanceToPlayer: 0
@@ -142,6 +153,7 @@ MonoBehaviour:
   isAttacking: 0
   isReturning: 1
   isMoving: 0
+  Health: 0
   shootpoint: {fileID: 6225818557019387402}
   ignoreLayer_1:
     serializedVersion: 2
@@ -202,7 +214,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.31231213, y: -0.15240026}
@@ -253,3 +265,66 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health_enemy: 100
   attackDamage: 10
+--- !u!114 &5928027929161256805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5270890385019477775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
+--- !u!70 &5630874136722976381
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5270890385019477775}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.30623245, y: -0.7814627}
+  m_Size: {x: 0.87517595, y: 0.26271024}
+  m_Direction: 1

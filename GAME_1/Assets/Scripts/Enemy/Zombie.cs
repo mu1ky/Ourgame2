@@ -1,19 +1,21 @@
+using Pathfinding;
 using System.Collections;
+using System.ComponentModel;
 using UnityEngine;
 
-public class Zombie : Enemy_1
+public class Zombie : Enemy_AI
 {
     public float moveSpeed = 2f; // —корость движени€ врага
     public float attackRange = 2.5f; // ƒальность атаки
     public float attackCooldown = 1f; // ¬рем€ между атаками
     public float chaseDistance = 5f; // –ассто€ние преследовани€
-    public float stopDistance = 0.7f; 
+    public float stopDistance = 0.1f;
     public float distanceToPlayer;
     public float distanceToStart;
     public Vector2 distance;
+    public float Health_;
 
     private Transform player; // —сылка на игрока
-    private Rigidbody2D rb; // Rigidbody2D дл€ движени€
     private Vector3 startingPosition; // Ќачальна€ позици€ врага
     private Animator anim;
 
@@ -32,84 +34,105 @@ public class Zombie : Enemy_1
     public bool IsDeathLeft;
     public bool IsDeathRight;
     public bool IsStop;
-
+    private bool isDie_;
+    private bool IsColliderFind_;
     private bool Up;
     private bool Down;
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player_1").transform; 
-        rb = GetComponent<Rigidbody2D>(); 
+        seeker = GetComponent<Seeker>();
+        rb_2 = GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("Player_1").transform;
         startingPosition = transform.position;
         anim = GetComponent<Animator>();
+        Health_ = GetComponent<Enemy_1>().health_enemy;
+        InvokeRepeating("UpdatePath", 0f, 0.5f);
     }
-
-    void Update()
+    void FixedUpdate()
     {
         distanceToPlayer = Vector2.Distance(transform.position, player.position);
-        distance = player.position - transform.position;
 
         // ѕровер€ем, находитс€ ли игрок в пределах рассто€ни€ преследовани€
         if (distanceToPlayer < chaseDistance)
         {
             MoveTowardsPlayer();
-            Animation();
+            Animation(player.position);
 
             // ≈сли игрок близок к врагу, атакуем
-            if ((distanceToPlayer < attackRange))
+            if (distanceToPlayer < attackRange)
             {
                 AttackPlayer();
-                Animation();
+                Animation(player.position);
             }
         }
         else
         {
             // ≈сли игрок далеко, возвращаемс€ на начальную позицию
             ReturnToStartingPosition();
-            Animation();
+            Animation(startingPosition);
+        }
+        Health_ = GetComponent<Enemy_1>().health_enemy;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Obstacle")
+        {
+            IsColliderFind_ = true;
+        }
+        else
+        {
+            IsColliderFind_ = false;
         }
     }
-
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Obstacle")
+        {
+            IsColliderFind_ = true;
+        }
+        else
+        {
+            IsColliderFind_ = false;
+        }
+    }
     void MoveTowardsPlayer()
     {
         if (player != null)
         {
+            Move();
             IsWalking = true;
             IsAttacking = false;
 
             distanceToPlayer = Vector2.Distance(transform.position, player.position);
-            
+
             // ƒвигаемс€ только если игрок не слишком близко
             if (distanceToPlayer > stopDistance)
             {
-                Vector2 direction = (player.position - transform.position).normalized;
-                rb.velocity = direction * moveSpeed; // »спользуем Rigidbody2D дл€ движени€
+                rb_2.velocity = direction * moveSpeed;
             }
             else
             {
-                rb.velocity = Vector2.zero; // ќстанавливаемс€, если слишком близко
+                rb_2.velocity = Vector2.zero; // ќстанавливаемс€, если слишком близко
             }
         }
         else
         {
-            rb.velocity = Vector2.zero; // ќстанавливаемс€, если игрока нет
+            rb_2.velocity = Vector2.zero; // ќстанавливаемс€, если игрока нет
         }
     }
-
     void AttackPlayer()
     {
-        //distanceToPlayer = Vector2.Distance(transform.position, player.position);
-        distance = player.position - transform.position;
+        Move();
         if (Player.Instance.IsAttacking_() == true)
         {
-            rb.velocity = Vector3.zero;
+            rb_2.velocity = Vector3.zero;
             IsAttacking = true;
             IsWalking = false;
         }
         else
         {
-            Vector2 direction = (player.position - transform.position).normalized;
-            rb.velocity = direction * moveSpeed;
+            rb_2.velocity = direction * moveSpeed;
             IsAttacking = false;
             IsWalking = true;
         }
@@ -118,29 +141,28 @@ public class Zombie : Enemy_1
     {
         // ¬озвращаемс€ на начальное положение
         distanceToStart = Vector2.Distance(transform.position, startingPosition);
+        Vector2 directionToStart = (startingPosition - transform.position).normalized;
 
         if (distanceToStart > 0.1f) // ƒл€ предотвращени€ дрожани€
         {
-            Vector2 direction = (startingPosition - transform.position).normalized;
-            rb.velocity = direction * moveSpeed; // ѕеремещаемс€ к начальной точке
-
+            rb_2.velocity = directionToStart * moveSpeed;
             IsWalking = true;
             IsAttacking = false;
 
         }
         else
         {
-            rb.velocity = Vector2.zero; // ќстанавливаемс€, как только достигли начальной позиции
+            rb_2.velocity = Vector2.zero; // ќстанавливаемс€, как только достигли начальной позиции
             IsWalking = false;
             IsAttacking = false;
         }
     }
     //функци€ смены анимаций
-    void Animation()
+    void Animation(Vector3 direction_point)
     {
-        distance = player.position - transform.position;
+        distance = direction_point - transform.position;
         distanceToStart = Vector2.Distance(transform.position, startingPosition);
-        distanceToPlayer = Vector2.Distance(transform.position, player.position);
+        float distanceToPoint = Vector2.Distance(transform.position, direction_point);
         Up = false;
         Down = false;
         IsAttackUp = false;
@@ -183,7 +205,7 @@ public class Zombie : Enemy_1
                 IsWalkUp = false;
             }
             if (IsWalking == true)
-            { 
+            {
                 IsWalkUp = true;
                 IsAttackUp = false;
             }
@@ -205,7 +227,7 @@ public class Zombie : Enemy_1
                 }
             }
             if (distance.x > 0)
-            { 
+            {
                 if (IsAttacking == true)
                 {
                     IsAttackRight = true;
@@ -227,8 +249,17 @@ public class Zombie : Enemy_1
         anim.SetBool("Down_a", IsAttackDown);
         anim.SetBool("Left_a", IsAttackLeft);
         anim.SetBool("Right_a", IsAttackRight);
-        //код дл€ перехода к анимации смерти ещЄ не придуман
-        //отдельно код дл€ движени€ к герою и возвращению к начальной точке
-        //попробовать через координаты игрока и врага
+    }
+    void Get_Health()
+    {
+        if (Health_ <= 0)
+        {
+            isDie_ = true;
+        }
+        else
+        {
+            isDie_ = true;
+        }
+        anim.SetBool("Death_2", isDie_);//добавить в аниматор триггер
     }
 }

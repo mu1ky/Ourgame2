@@ -67,7 +67,7 @@ public class Gun : MonoBehaviour
                 {
                     if (hit.collider.tag == "Enemy")
                     {
-                        Robot enemy = hit.collider.GetComponent<Robot>();
+                        Enemy_1 enemy = hit.collider.GetComponent<Enemy_1>();
                         Debug.Log("Attack! Damage: " + dam);
                         enemy.TakeDamage_enemy(dam);
                     }

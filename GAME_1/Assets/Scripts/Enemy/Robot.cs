@@ -1,19 +1,26 @@
+using Pathfinding;
 using System.Collections;
 using UnityEngine;
-public class Robot : Enemy_1
+public class Robot : Enemy_AI
 {
     private float moveSpeed = 2f; // Скорость движения врага
     private float attackCooldown = 1f; // Время между атаками
+    public float attackDamage = 10f; // Урон от атаки врага
     private float agroRange = 5f; // Дистанция, при которой враг начинает атаковать игрока
     private float chaseDistance = 15f; // Дальность преследования
-    private float shootingRange = 10f; // Максимальная дистанция для стрельбы
+    //private float shootingRange = 10f; // Максимальная дистанция для стрельбы
+    public float stopDistance = 0.1f;
+    private float lastAttackTime; // Время последней атаки
     public Vector2 directionToPlayer;
     public Vector2 shootingDirection;
     public float distanceToPlayer;
     public float distanceToStart;
+
     public bool isAttacking = false;
     public bool isReturning = false;
     public bool isMoving = false;
+    public float Health;
+    private bool isDie;
     private bool Left_1;
     private bool Right_1;
     private bool Left;
@@ -21,28 +28,30 @@ public class Robot : Enemy_1
     private bool Up;
     private bool Down;
     private bool Idle;
+    private bool IsColliderFind;
 
     public Transform shootpoint;
-
     private Transform player; // Ссылка на игрока
-    private float lastAttackTime; // Время последней атаки
-    private Rigidbody2D rb; // Rigidbody2D для движения
     private Animator animator; //Animator для визуализации
     private Vector3 startingPosition; // Начальная позиция врага
     public LayerMask ignoreLayer_1;
+
     void Start()
     {
+        seeker = GetComponent<Seeker>();
+        rb_2 = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>(); // Получаем компонент Animator
         player = GameObject.FindGameObjectWithTag("Player_1").transform; // Находим игрока по тегу
-        rb = GetComponent<Rigidbody2D>(); // Получаем компонент Rigidbody2D
         startingPosition = transform.position; // Запоминаем начальную позицию врага
+        Health = GetComponent<Enemy_1>().health_enemy;
+        InvokeRepeating("UpdatePath", 0f, 0.5f);
     }
     void FixedUpdate()
     {
         distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
         if (distanceToPlayer < agroRange) { isAttacking = true; }
-        if (distanceToPlayer > shootingRange) { isAttacking = false; }
+        if (distanceToPlayer > agroRange) { isAttacking = false; }
 
         if (isAttacking == true)
         {
@@ -53,13 +62,34 @@ public class Robot : Enemy_1
             if (distanceToPlayer < chaseDistance)
             {
                 MoveTowardsPlayer();
-
             }
             else
             {
                 ReturnToStartingPosition();
-
             }
+        }
+        Health = GetComponent<Enemy_1>().health_enemy;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Obstacle")
+        {
+            IsColliderFind = true;
+        }
+        else
+        {
+            IsColliderFind = false;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Obstacle")
+        {
+            IsColliderFind = true;
+        }
+        else
+        {
+            IsColliderFind = false;
         }
     }
     void AttackPlayer()
@@ -85,11 +115,11 @@ public class Robot : Enemy_1
             shootingDirection = Vector2.up;
             if (playerX > enemyX)
             {
-                rb.velocity = new Vector2(moveSpeed, 0);
+                rb_2.velocity = new Vector2(moveSpeed, 0);
             }
             else
             {
-                rb.velocity = new Vector2(-moveSpeed, 0);
+                rb_2.velocity = new Vector2(-moveSpeed, 0);
             }
         }
         if ((playerY < enemyY) && (yDiff > xDiff))
@@ -98,11 +128,11 @@ public class Robot : Enemy_1
             shootingDirection = -Vector2.up;
             if (playerX > enemyX)
             {
-                rb.velocity = new Vector2(moveSpeed, 0);
+                rb_2.velocity = new Vector2(moveSpeed, 0);
             }
             else
             {
-                rb.velocity = new Vector2(-moveSpeed, 0);
+                rb_2.velocity = new Vector2(-moveSpeed, 0);
             }
         }
         if ((playerX > enemyX) && (xDiff > yDiff))
@@ -111,11 +141,11 @@ public class Robot : Enemy_1
             shootingDirection = Vector2.right;
             if (playerY > enemyY)
             {
-                rb.velocity = new Vector2(0, moveSpeed);
+                rb_2.velocity = new Vector2(0, moveSpeed);
             }
             else
             {
-                rb.velocity = new Vector2(0, -moveSpeed);
+                rb_2.velocity = new Vector2(0, -moveSpeed);
             }
         }
         if ((playerX < enemyX) && (xDiff > yDiff))
@@ -124,11 +154,11 @@ public class Robot : Enemy_1
             shootingDirection = -Vector2.right;
             if (playerY > enemyY)
             {
-                rb.velocity = new Vector2(0, moveSpeed);
+                rb_2.velocity = new Vector2(0, moveSpeed);
             }
             else
             {
-                rb.velocity = new Vector2(0, -moveSpeed);
+                rb_2.velocity = new Vector2(0, -moveSpeed);
             }
         }
         animator.SetBool("Left_1", Left_1);
@@ -157,37 +187,36 @@ public class Robot : Enemy_1
     }
     void MoveTowardsPlayer()
     {
-        Vector2 direction = (player.position - transform.position).normalized;
+        Move();
+        distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-
-        if (distanceToPlayer > agroRange)
+        if (distanceToPlayer > stopDistance)
         {
-            rb.velocity = direction * moveSpeed;
+            rb_2.velocity = direction * moveSpeed;
         }
         else
         {
-            rb.velocity = Vector2.zero;
+            rb_2.velocity = Vector2.zero;
         }
-        AnimationMove();
+        AnimationMove(player.position);
     }
     void ReturnToStartingPosition()
     {
         // Возвращаемся на начальное положение
         distanceToStart = Vector2.Distance(transform.position, startingPosition);
+        Vector2 directionToStart = (startingPosition - transform.position).normalized;
 
         if (distanceToStart > 0.1f) // Для предотвращения дрожания
         {
-            Vector2 direction = (startingPosition - transform.position).normalized;
-            rb.velocity = direction * moveSpeed; // Перемещаемся к начальной точке
+            rb_2.velocity = directionToStart * moveSpeed;
         }
         else
         {
-            rb.velocity = Vector2.zero; // Останавливаемся, как только достигли начальной позиции
+            rb_2.velocity = Vector2.zero; // Останавливаемся, как только достигли начальной позиции
         }
-        AnimationMove();
+        AnimationMove(startingPosition);
     }
-    void AnimationMove()
+    void AnimationMove(Vector3 direction_point)
     {
         Left = false;
         Right = false;
@@ -196,7 +225,7 @@ public class Robot : Enemy_1
         Left_1 = false;
         Right_1 = false;
         Idle = false;
-        Vector2 distance = player.position - transform.position;
+        Vector2 distance = direction_point - transform.position;
         distanceToStart = Vector2.Distance(transform.position, startingPosition);
         if (distance.x < 0)
         {
@@ -219,6 +248,18 @@ public class Robot : Enemy_1
         animator.SetBool("At_up", Up);
         animator.SetBool("At_down", Down);
         animator.SetBool("Idle", Idle);
+    }
+    void Get_Health()
+    {
+        if (Health <= 0)
+        {
+            isDie = true;
+        }
+        else
+        {
+            isDie = true;
+        }
+        animator.SetBool("Death_1", isDie);//добавить в аниматор триггер
     }
 }
 
