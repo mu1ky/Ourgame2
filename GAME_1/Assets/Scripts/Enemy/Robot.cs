@@ -179,6 +179,7 @@ public class Robot : Enemy_AI
                     Player player_1 = hit.collider.GetComponent<Player>();
                     Debug.Log("Attack! Damage: " + attackDamage);
                     player_1.TakeDamage_hero(attackDamage);
+                    player_1.TakeHP_hero();
                 }
                 //Debug.Log("Attack! Damage: " + hit.collider.tag);
             }

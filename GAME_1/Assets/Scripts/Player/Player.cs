@@ -9,6 +9,7 @@ using UnityEngine.UIElements;
 public class Player : MonoBehaviour
 {
     public static Player Instance { get; private set; }
+
     private Rigidbody2D rb;
     private Vector2 inputVector;
 
@@ -41,8 +42,8 @@ public class Player : MonoBehaviour
     private bool isShootingRight;
 
     public GameObject _gun;
-    public bool isFindKey = false;
-    public byte count_Key = 0;
+
+    public event EventHandler TakeHP;
 
     public bool IsAttacking_()
     {
@@ -120,10 +121,6 @@ public class Player : MonoBehaviour
     {
         return !isShooting;
     }
-    public bool IsFindKey_()
-    {
-        return isFindKey;
-    }
     private void HandleMovement()
     {
         speed_to_axis = inputVector * (speed_player * Time.fixedDeltaTime);
@@ -138,7 +135,6 @@ public class Player : MonoBehaviour
     private void Start()
     {
         _gun.SetActive(false);
-        isFindKey = false;
     }
     private void FixedUpdate()
     {
@@ -308,6 +304,10 @@ public class Player : MonoBehaviour
             Die(); // Вызываем метод смерти, если здоровье ниже или равно нулю
         }
     }
+    public void TakeHP_hero()
+    {
+        TakeHP?.Invoke(this, EventArgs.Empty);
+    }
     private void Die()
     {
         Debug.Log("Player has died!");
@@ -327,16 +327,11 @@ public class Player : MonoBehaviour
                     {
                         Debug.Log("Attack! Damage: " + en.attackDamage);
                         TakeDamage_hero(en.attackDamage);
+                        TakeHP_hero();
                     }
                 }
                 lastAttackTime_1 = Time.time;
             }
-        }
-        else if (collision.gameObject.tag == "Key")
-        {
-            isFindKey = true;
-            count_Key =+ 1;
-            Destroy(collision.gameObject, 0.5f);
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
@@ -353,6 +348,7 @@ public class Player : MonoBehaviour
                     {
                         Debug.Log("Attack! Damage: " + en.attackDamage);
                         TakeDamage_hero(en.attackDamage);
+                        TakeHP_hero();
                     }
                 }
                 lastAttackTime_1 = Time.time;
