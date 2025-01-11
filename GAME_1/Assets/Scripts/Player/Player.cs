@@ -44,6 +44,8 @@ public class Player : MonoBehaviour
     public GameObject _gun;
 
     public event EventHandler TakeHP;
+    public event EventHandler TakeCount;
+    public byte count_Key = 0;
 
     public bool IsAttacking_()
     {
@@ -308,6 +310,10 @@ public class Player : MonoBehaviour
     {
         TakeHP?.Invoke(this, EventArgs.Empty);
     }
+    public void TakeCountKey()
+    {
+        TakeCount?.Invoke(this, EventArgs.Empty);
+    }
     private void Die()
     {
         Debug.Log("Player has died!");
@@ -332,6 +338,12 @@ public class Player : MonoBehaviour
                 }
                 lastAttackTime_1 = Time.time;
             }
+        }
+        if (collision.gameObject.tag == "Key")
+        {
+            count_Key = +1;
+            Destroy(collision.gameObject, 0.5f);
+            TakeCountKey();
         }
     }
     private void OnTriggerStay2D(Collider2D collision)

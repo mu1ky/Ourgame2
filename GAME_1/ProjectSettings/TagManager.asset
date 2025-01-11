@@ -7,6 +7,8 @@ TagManager:
   - Player_1
   - Enemy
   - Key
+  - Hero_canvas
+  - Send
   layers:
   - Default
   - TransparentFX
