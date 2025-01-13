@@ -52,6 +52,7 @@ public class Change_Scene : MonoBehaviour
         else
         {
             SceneManager.LoadScene(index + 1);
+            Destroy(this);
         }
     }
 }
