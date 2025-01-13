@@ -1,23 +1,23 @@
 Using pre-set license
 Built from '2022.3/staging' branch; Version is '2022.3.44f1 (c3ae09b9f03c) revision 12824073'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 11  (10.0.22000) 64bit CoreSingleLanguage' Language: 'ru' Physical Memory: 7991 MB
+OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'ru' Physical Memory: 24533 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\2022.3.44f1\Editor\Unity.exe
+D:\Programs\2022.3.44f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-D:/Ourgame2/GAME_1
+D:/Programs/GitHub/Ourgame2/GAME_1
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-53084
-Successfully changed project path to: D:/Ourgame2/GAME_1
-D:/Ourgame2/GAME_1
+57389
+Successfully changed project path to: D:/Programs/GitHub/Ourgame2/GAME_1
+D:/Programs/GitHub/Ourgame2/GAME_1
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -49,67 +49,68 @@ D:/Ourgame2/GAME_1
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [15964]  Target information:
+Player connection [5568]  Target information:
 
-Player connection [15964]  * "[IP] 192.168.1.72 [Port] 0 [Flags] 2 [Guid] 1550683321 [EditorId] 1550683321 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-7OEDGL2I) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [5568]  * "[IP] 192.168.237.203 [Port] 0 [Flags] 2 [Guid] 447454981 [EditorId] 447454981 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-8CIN4IG) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [15964] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [15964] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [5568] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [5568] Host joined alternative multi-casting on [225.0.0.222:34997]...
 [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-Refreshing native plugins compatible for Editor in 24.15 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 162.42 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.44f1 (c3ae09b9f03c)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.44f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path D:/Ourgame2/GAME_1/Assets
+[Subsystems] Discovering subsystems at path D:/Programs/2022.3.44f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Programs/GitHub/Ourgame2/GAME_1/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: Intel(R) UHD Graphics (ID=0x9a78)
-    Vendor:   Intel
-    VRAM:     3995 MB
-    Driver:   27.20.100.9664
+    Renderer: Radeon RX 580 Series (ID=0x67df)
+    Vendor:   ATI
+    VRAM:     8170 MB
+    Driver:   31.0.21921.1000
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.44f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.44f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.44f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56680
+Mono path[0] = 'D:/Programs/2022.3.44f1/Editor/Data/Managed'
+Mono path[1] = 'D:/Programs/2022.3.44f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/Programs/2022.3.44f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56044
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.44f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.006184 seconds.
-- Loaded All Assemblies, in  0.653 seconds
+Register platform support module: D:/Programs/2022.3.44f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.007702 seconds.
+- Loaded All Assemblies, in  1.355 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.517 seconds
-Domain Reload Profiling: 1169ms
-	BeginReloadAssembly (223ms)
+- Finished resetting the current domain, in  0.680 seconds
+Domain Reload Profiling: 2035ms
+	BeginReloadAssembly (394ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (2ms)
-	RebuildCommonClasses (60ms)
-	RebuildNativeTypeToScriptingClass (19ms)
-	initialDomainReloadingComplete (87ms)
-	LoadAllAssembliesAndSetupDomain (261ms)
-		LoadAssemblies (226ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (332ms)
+	RebuildNativeTypeToScriptingClass (132ms)
+	initialDomainReloadingComplete (187ms)
+	LoadAllAssembliesAndSetupDomain (309ms)
+		LoadAssemblies (393ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (252ms)
-			TypeCache.Refresh (250ms)
-				TypeCache.ScanAssembly (234ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
+		AnalyzeDomain (305ms)
+			TypeCache.Refresh (302ms)
+				TypeCache.ScanAssembly (278ms)
+			ScanForSourceGeneratedMonoScriptInfo (1ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (518ms)
+	FinalizeReload (681ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (431ms)
+		SetupLoadedEditorAssemblies (566ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (16ms)
-			SetLoadedEditorAssemblies (15ms)
+			InitializePlatformSupportModulesInManaged (17ms)
+			SetLoadedEditorAssemblies (13ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (5ms)
-			ProcessInitializeOnLoadAttributes (318ms)
-			ProcessInitializeOnLoadMethodAttributes (77ms)
+			ProcessInitializeOnLoadAttributes (383ms)
+			ProcessInitializeOnLoadMethodAttributes (147ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -118,61 +119,61 @@ Domain Reload Profiling: 1169ms
 Worker process is ready to serve import requests
 Caller must complete domain reload
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.232 seconds
+- Loaded All Assemblies, in  2.355 seconds
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.707 seconds
-Domain Reload Profiling: 2936ms
-	BeginReloadAssembly (215ms)
+- Finished resetting the current domain, in  1.657 seconds
+Domain Reload Profiling: 4005ms
+	BeginReloadAssembly (399ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (8ms)
+		DisableScriptedObjects (14ms)
 		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (32ms)
-	RebuildCommonClasses (59ms)
-	RebuildNativeTypeToScriptingClass (26ms)
-	initialDomainReloadingComplete (70ms)
-	LoadAllAssembliesAndSetupDomain (858ms)
-		LoadAssemblies (585ms)
+		ReleaseScriptingObjects (1ms)
+		CreateAndSetChildDomain (51ms)
+	RebuildCommonClasses (91ms)
+	RebuildNativeTypeToScriptingClass (33ms)
+	initialDomainReloadingComplete (117ms)
+	LoadAllAssembliesAndSetupDomain (1708ms)
+		LoadAssemblies (966ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (392ms)
-			TypeCache.Refresh (328ms)
-				TypeCache.ScanAssembly (299ms)
-			ScanForSourceGeneratedMonoScriptInfo (46ms)
-			ResolveRequiredComponents (16ms)
-	FinalizeReload (1707ms)
+		AnalyzeDomain (980ms)
+			TypeCache.Refresh (899ms)
+				TypeCache.ScanAssembly (867ms)
+			ScanForSourceGeneratedMonoScriptInfo (64ms)
+			ResolveRequiredComponents (15ms)
+	FinalizeReload (1658ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1477ms)
+		SetupLoadedEditorAssemblies (1313ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (7ms)
-			SetLoadedEditorAssemblies (19ms)
+			InitializePlatformSupportModulesInManaged (13ms)
+			SetLoadedEditorAssemblies (10ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (211ms)
-			ProcessInitializeOnLoadAttributes (1087ms)
-			ProcessInitializeOnLoadMethodAttributes (146ms)
-			AfterProcessingInitializeOnLoad (7ms)
+			BeforeProcessingInitializeOnLoad (183ms)
+			ProcessInitializeOnLoadAttributes (924ms)
+			ProcessInitializeOnLoadMethodAttributes (177ms)
+			AfterProcessingInitializeOnLoad (6ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (8ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
-Refreshing native plugins compatible for Editor in 5.15 ms, found 4 plugins.
+		AwakeInstancesAfterBackupRestoration (16ms)
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Refreshing native plugins compatible for Editor in 7.55 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 6214 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 36 unused Assets / (346.5 KB). Loaded Objects now: 6685.
-Memory consumption went from 232.3 MB to 232.0 MB.
-Total: 7.200300 ms (FindLiveObjects: 0.664700 ms CreateObjectMapping: 0.742800 ms MarkObjects: 5.447900 ms  DeleteObjects: 0.343100 ms)
+Unloading 6153 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (0.8 MB). Loaded Objects now: 6621.
+Memory consumption went from 216.9 MB to 216.1 MB.
+Total: 7.176100 ms (FindLiveObjects: 0.547900 ms CreateObjectMapping: 0.513700 ms MarkObjects: 5.683200 ms  DeleteObjects: 0.429200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
   custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
   custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
@@ -183,430 +184,59 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 19078.024819 seconds.
-  path: Assets/Pixel Monster Pack/sprite-sheet-32x32.png
-  artifactKey: Guid(c3a0ffcab94f86043aa02beca70d680b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/sprite-sheet-32x32.png using Guid(c3a0ffcab94f86043aa02beca70d680b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
+  Time since last request: 10962.492511 seconds.
+  path: Assets/Prefabs/Zombie.prefab
+  artifactKey: Guid(e6d58fef5590fbd42a83352ce458eea4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Zombie.prefab using Guid(e6d58fef5590fbd42a83352ce458eea4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: 'adfc55950b1ff130b0ceb3e196e53cf0') in 0.350001 seconds
+ -> (artifact id: '30908e68ae0861b80ae0234701735442') in 0.196950 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 42
-========================================================================
-Received Import Request.
-  Time since last request: 0.000093 seconds.
-  path: Assets/Pixel Monster Pack/sprite-sheet-64x64.png
-  artifactKey: Guid(c6551d5c9e174f44ba33a4a4e61b94d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/sprite-sheet-64x64.png using Guid(c6551d5c9e174f44ba33a4a4e61b94d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: 'c21ce58d7ddf0dd11a36719d45f02891') in 0.216039 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 42
-========================================================================
-Received Import Request.
-  Time since last request: 26.422496 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/boneworm-black.png
-  artifactKey: Guid(da88a6bcbf1706a409007e9a0a2949b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/boneworm-black.png using Guid(da88a6bcbf1706a409007e9a0a2949b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: '79bc35f0468bfb87a9f87eb7dbb7d976') in 0.025867 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/slime-red.png
-  artifactKey: Guid(35a60898747d4194f896b10414831782) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/slime-red.png using Guid(35a60898747d4194f896b10414831782) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: 'e4d7942ddeae2def07c1eca71ee71fd0') in 0.021688 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/boneworm-blue.png
-  artifactKey: Guid(283b986b48549674ab2c6128d296ecaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/boneworm-blue.png using Guid(283b986b48549674ab2c6128d296ecaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: 'f489b37a6ca5c8425ccc85a10e5b3825') in 0.022804 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000040 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/rat-white.png
-  artifactKey: Guid(5dcc46a5545a1da49bbbeab76bcb733f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/rat-white.png using Guid(5dcc46a5545a1da49bbbeab76bcb733f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: '61a58788c703ec52c43ae1a4d8f12097') in 0.024120 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/cerberus-red.png
-  artifactKey: Guid(e78e9f6ac378f9147b219a4aa0ca0fb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/cerberus-red.png using Guid(e78e9f6ac378f9147b219a4aa0ca0fb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: 'eca98324eb14cd6867959454cb2a26fc') in 0.038677 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
+Number of asset objects unloaded after import = 146
 ========================================================================
 Received Import Request.
   Time since last request: 0.000041 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/skull-red.png
-  artifactKey: Guid(7099be8759b55e24bbc19c92b6e92b9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/skull-red.png using Guid(7099be8759b55e24bbc19c92b6e92b9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
+  path: Assets/Prefabs/Enemy.prefab
+  artifactKey: Guid(43665eb7c2708bf468bdaaecb8d155f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Enemy.prefab using Guid(43665eb7c2708bf468bdaaecb8d155f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: 'b186e0354e7586a5f129d165b4747af2') in 0.024074 seconds
+ -> (artifact id: 'bf674571b62550567138a3b5cdd4859c') in 0.024315 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
+Number of asset objects unloaded after import = 103
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/scorpion-blue.png
-  artifactKey: Guid(955d268a076ca604e8c27efd24dbcc0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/scorpion-blue.png using Guid(955d268a076ca604e8c27efd24dbcc0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Prefabs/Player.prefab
+  artifactKey: Guid(8c229d6ff219f4645bc97c352fec1139) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Player.prefab using Guid(8c229d6ff219f4645bc97c352fec1139) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: '8cf8618bcfbad9f8695dec4208748bec') in 0.021549 seconds
+ -> (artifact id: 'ccff0f089dca28ef1d439dc1d2e13f4f') in 0.037609 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
+Number of asset objects unloaded after import = 206
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/boneworm-white.png
-  artifactKey: Guid(e725470deb4cd5e48869d437c2f7614a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/boneworm-white.png using Guid(e725470deb4cd5e48869d437c2f7614a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: '1db678b4523d6da496125fa73ede50f3') in 0.025261 seconds
+  Time since last request: 0.000035 seconds.
+  path: Assets/Prefabs/A_.prefab
+  artifactKey: Guid(002b3e85a31d7114497034b0984732e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/A_.prefab using Guid(002b3e85a31d7114497034b0984732e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
+ -> (artifact id: 'f4367e93a0fe9501b8379adc256fa54e') in 0.011988 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/ooze-red.png
-  artifactKey: Guid(04562bc13a2407e40ae370dad404125b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/ooze-red.png using Guid(04562bc13a2407e40ae370dad404125b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: '43407515c71018d42dfc6b51c9b0e9af') in 0.025254 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
+Number of asset objects unloaded after import = 5
 ========================================================================
 Received Import Request.
   Time since last request: 0.000020 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/scorpion-white.png
-  artifactKey: Guid(cf487c23a8f70ad4d9e4ea67a4314b38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/scorpion-white.png using Guid(cf487c23a8f70ad4d9e4ea67a4314b38) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
+  path: Assets/Prefabs/Grid_Second_LvL 1.prefab
+  artifactKey: Guid(54112339688b87941979248f8d54bf10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Grid_Second_LvL 1.prefab using Guid(54112339688b87941979248f8d54bf10) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
 [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: '655de507637c56bd30337e7683740314') in 0.023097 seconds
+ -> (artifact id: 'da3dc5fe6d7ec8fdf2431277e0dff176') in 0.369433 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
+Number of asset objects unloaded after import = 822
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/cerberus-green.png
-  artifactKey: Guid(bc2749f6e5a54a84cb59b4c89cabc01c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/cerberus-green.png using Guid(bc2749f6e5a54a84cb59b4c89cabc01c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: '0889a2f8855f7ac1c99f85672a129154') in 0.023370 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000040 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/slime-blue.png
-  artifactKey: Guid(1843637ea4989294aa986443dbc2734a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/slime-blue.png using Guid(1843637ea4989294aa986443dbc2734a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: 'f0a378bdc33faeb9471da55246312813') in 0.025651 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/spider-blue.png
-  artifactKey: Guid(932812732bbf750488c77d88fde217ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/spider-blue.png using Guid(932812732bbf750488c77d88fde217ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: '6bec5cfc505463d07648ea1865e1e62e') in 0.021994 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/scorpion-green.png
-  artifactKey: Guid(54e2a14f4a7461e4bb0b63e4151d20e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/scorpion-green.png using Guid(54e2a14f4a7461e4bb0b63e4151d20e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: '9f7a2fdadc7b685cdacbb844ece32f7d') in 0.026657 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/wolf-black.png
-  artifactKey: Guid(e62c76c496528234a8b52eb179ea6350) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/wolf-black.png using Guid(e62c76c496528234a8b52eb179ea6350) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: '2c2ce337b38df883945314bba4aaf2c7') in 0.021656 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/boneworm-green.png
-  artifactKey: Guid(d38b112131aea4540817aab7e2a222db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/boneworm-green.png using Guid(d38b112131aea4540817aab7e2a222db) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: 'f47fa7f6375050337c33ddd81a128380') in 0.037365 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/skull-green.png
-  artifactKey: Guid(2180e8200364de34d8a0696f5f38de49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/skull-green.png using Guid(2180e8200364de34d8a0696f5f38de49) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: 'e6552bd467b401ee2b3c780a1e75adca') in 0.029319 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/slime-green.png
-  artifactKey: Guid(11eac439ccf58354fb7f1b7b67737a03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/slime-green.png using Guid(11eac439ccf58354fb7f1b7b67737a03) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: '794d4e3be17689ee3bd47cd32fe4f789') in 0.028723 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000049 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/rat-brown.png
-  artifactKey: Guid(ee468a0e52cf5cb4a875089a027508c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/rat-brown.png using Guid(ee468a0e52cf5cb4a875089a027508c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: '07e4b9cbb2755a476cbf62e2ff281bc6') in 0.032541 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/ooze-blue.png
-  artifactKey: Guid(7e3aab7425bf756429ed8c04b4bd55ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/ooze-blue.png using Guid(7e3aab7425bf756429ed8c04b4bd55ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: 'f859244b3b73310e47e3cb9ab0c81534') in 0.022532 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/ooze-black.png
-  artifactKey: Guid(d04a3d55d9075d44998eae2c69b2bc78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/ooze-black.png using Guid(d04a3d55d9075d44998eae2c69b2bc78) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: 'b8fd8aca3fec5c51e176f8f41ca5807f') in 0.026723 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/cerberus-white.png
-  artifactKey: Guid(a23a7ced775ab28459e507d5c8cb8482) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/cerberus-white.png using Guid(a23a7ced775ab28459e507d5c8cb8482) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: 'd83927b24327efd9bc11d25ec577c65c') in 0.020565 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000247 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/spider-black.png
-  artifactKey: Guid(575d6ab12253e0749a7bb6a07a1260ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/spider-black.png using Guid(575d6ab12253e0749a7bb6a07a1260ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: '09a36955db7f98af38aa319950729588') in 0.023773 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/scorpion-black.png
-  artifactKey: Guid(5e75bb301b752184ca35a39c8fa32743) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/scorpion-black.png using Guid(5e75bb301b752184ca35a39c8fa32743) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: '69f909e062ad8e32c4f57bccf580c6e3') in 0.027206 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/rat-green.png
-  artifactKey: Guid(a5166e236a6a6b148bd2870e1d9ce4f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/rat-green.png using Guid(a5166e236a6a6b148bd2870e1d9ce4f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: '74385200e5a14658eb136b7d48cdf71e') in 0.022291 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/cerberus-black.png
-  artifactKey: Guid(7b5003f1c938a804a8c25728d3f30398) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/cerberus-black.png using Guid(7b5003f1c938a804a8c25728d3f30398) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: '38ff529c2593aec1a034ad517024b1cd') in 0.025018 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000107 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/spider-green.png
-  artifactKey: Guid(71476fb161036e84ba514a3767ea7337) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/spider-green.png using Guid(71476fb161036e84ba514a3767ea7337) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: '9a37a2a546d1bf621dc9cf9999b4e942') in 0.027026 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/wolf-green.png
-  artifactKey: Guid(62eaa2a609276b64c826459c8cc52a9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/wolf-green.png using Guid(62eaa2a609276b64c826459c8cc52a9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: 'df3880b8e5727c21a80232fb043364a6') in 0.024678 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/slime-black.png
-  artifactKey: Guid(98a78e783122f1d49a1d6b39ca80ec14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/slime-black.png using Guid(98a78e783122f1d49a1d6b39ca80ec14) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: '51c4380a0da56b8d8590a5ca1bda9aa3') in 0.021836 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/rat-black.png
-  artifactKey: Guid(768bf658473177546991c5299cda3c80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/rat-black.png using Guid(768bf658473177546991c5299cda3c80) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: '7f1493a6906c84db8d4bda0933b27efd') in 0.022541 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters
-  artifactKey: Guid(0535247c1e76dea448c485919d27f9e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters using Guid(0535247c1e76dea448c485919d27f9e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: '23d65df0bc2c7910d581f8ba8eb686ac') in 0.000713 seconds
+  Time since last request: 35.088811 seconds.
+  path: Assets/Scenes/Second_LvL.unity
+  artifactKey: Guid(fc430f2ac6f4c5c4788392aa6bdb700d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Second_LvL.unity using Guid(fc430f2ac6f4c5c4788392aa6bdb700d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
+ -> (artifact id: '3863a61ec2d36c29bcf332b600ea1821') in 0.000717 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/wolf-white.png
-  artifactKey: Guid(e573449b0ffb8814e84905c16467421e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/wolf-white.png using Guid(e573449b0ffb8814e84905c16467421e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: '84047c4f74ac56131e2bc1a596a09257') in 0.041701 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/wolf-blue.png
-  artifactKey: Guid(80a17c7c339458145b8c7750fa6b0dc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/wolf-blue.png using Guid(80a17c7c339458145b8c7750fa6b0dc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: 'c9b611c4797bb15a31ff493c3947b613') in 0.022906 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/worm-black.png
-  artifactKey: Guid(b1aeaa343a4b9884992a5b657e975e16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/worm-black.png using Guid(b1aeaa343a4b9884992a5b657e975e16) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: '6a6e380d3a2ceeeed2f964b6057b57f7') in 0.025902 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/spider-white.png
-  artifactKey: Guid(545a19dc6097a4547893d22f96f65cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/spider-white.png using Guid(545a19dc6097a4547893d22f96f65cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: '22be91ecdfd0ceada68dd8f1c63ad9e3') in 0.023159 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/skull-violet.png
-  artifactKey: Guid(eadd61a052013ea40b57e2116c637677) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/skull-violet.png using Guid(eadd61a052013ea40b57e2116c637677) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: 'bcfda99fea3c3513ad8d70cac6bd767f') in 0.025425 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/skull-blue.png
-  artifactKey: Guid(8e2d17953f2974646a0674f8edb5faa9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/skull-blue.png using Guid(8e2d17953f2974646a0674f8edb5faa9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: '226a89226f44efe6167e3cc8c04ea992') in 0.033714 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000082 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/ooze-green.png
-  artifactKey: Guid(d6eb508d2823d8d448e2204650724e3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/ooze-green.png using Guid(d6eb508d2823d8d448e2204650724e3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: '83d43d825275c0a4d196a27d0579476b') in 0.035812 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 2.122364 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/worm-brown.png
-  artifactKey: Guid(d6791f90eb6e2384bb31903865318fcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/worm-brown.png using Guid(d6791f90eb6e2384bb31903865318fcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: '8d80c93002f2ebef7c221caab3ab00e4') in 0.027398 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000158 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/worm-white.png
-  artifactKey: Guid(804ceab9b19850742a982912a38f392a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/worm-white.png using Guid(804ceab9b19850742a982912a38f392a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: 'b81d0c48f8354317ceb48049db6fde0f') in 0.026408 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Pixel Monster Pack/32x32 monsters/worm-green.png
-  artifactKey: Guid(afd7405ec51ae0746b9626b2a4c43e4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Monster Pack/32x32 monsters/worm-green.png using Guid(afd7405ec51ae0746b9626b2a4c43e4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
- -> (artifact id: '68a7eb84f1dc976834669da78d35fe2d') in 0.021870 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
