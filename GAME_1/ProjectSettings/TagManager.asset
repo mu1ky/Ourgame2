@@ -13,6 +13,8 @@ TagManager:
   - Blast2
   - Blast3
   - Blast4
+  - Bullet
+  - Grenada
   layers:
   - Default
   - TransparentFX
