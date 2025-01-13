@@ -37,7 +37,7 @@ public class Change_Scene : MonoBehaviour
             asyncLoad.completed += operation =>
             {
                 Scene newScene = SceneManager.GetSceneByBuildIndex(index + 1);
-                GameObject newG1 = Instantiate(g_1, new Vector3(0f, 0f, 0f), Quaternion.identity); // Создаём копию из префаба
+                GameObject newG1 = Instantiate(g_1, new Vector3(136f, 54f, 0f), Quaternion.identity); // Создаём копию из префаба
                 //тут надо будет во втором параметре поменять координаты (посмотреть где начинается второй уровень и указать те координаты)
                 SceneManager.MoveGameObjectToScene(newG1, newScene);
                 g_1 = newG1;

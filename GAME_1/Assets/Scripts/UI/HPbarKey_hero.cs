@@ -23,10 +23,16 @@ public class HPbarKey_hero : MonoBehaviour
         dat.Count_key = count_Key;
         Player.Instance.TakeHP += LowerHP;
         Player.Instance.TakeCount += CountKeyHero;
+        Player.Instance.TakeMed += IncreaseHP;
     }
     private void LowerHP(object sender, System.EventArgs e)
     {
         HP -= 10f;
+        dat.HP_hero = HP / 100f;
+    }
+    private void IncreaseHP(object sender, System.EventArgs e)
+    {
+        HP += 10f;
         dat.HP_hero = HP / 100f;
     }
     private void CountKeyHero(object sender, System.EventArgs e)

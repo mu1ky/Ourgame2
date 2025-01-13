@@ -46,6 +46,7 @@ public class Player : MonoBehaviour
 
     public event EventHandler TakeHP;
     public event EventHandler TakeCount;
+    public event EventHandler TakeMed;
     public byte count_Key = 0;
 
     public bool IsAttacking_()
@@ -315,6 +316,10 @@ public class Player : MonoBehaviour
     {
         TakeCount?.Invoke(this, EventArgs.Empty);
     }
+    public void TakeMedicine()
+    {
+        TakeMed?.Invoke(this, EventArgs.Empty);
+    }
     private void Die()
     {
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(5);
@@ -347,6 +352,12 @@ public class Player : MonoBehaviour
             count_Key = +1;
             Destroy(collision.gameObject, 0.5f);
             TakeCountKey();
+        }
+        if (collision.gameObject.tag == "Key")
+        {
+            health_hero = +5f;
+            Destroy(collision.gameObject, 0.5f);
+            TakeMedicine();
         }
     }
     private void OnTriggerStay2D(Collider2D collision)

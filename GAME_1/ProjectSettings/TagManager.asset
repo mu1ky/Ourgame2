@@ -15,6 +15,7 @@ TagManager:
   - Blast4
   - Bullet
   - Grenada
+  - Medicine
   layers:
   - Default
   - TransparentFX
