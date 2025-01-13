@@ -9,6 +9,10 @@ TagManager:
   - Key
   - Hero_canvas
   - Send
+  - Blast1
+  - Blast2
+  - Blast3
+  - Blast4
   layers:
   - Default
   - TransparentFX

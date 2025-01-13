@@ -5,6 +5,7 @@ using System;
 using System.Net;
 using Unity.VisualScripting;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -316,7 +317,9 @@ public class Player : MonoBehaviour
     }
     private void Die()
     {
-        Debug.Log("Player has died!");
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(5);
+        //добавить эффектов при помощи postprocessing
+        //Debug.Log("Player has died!");
         // Логика смерти игрока (например, перезагрузка сцены, анимации и т.д.)
     }
     private void OnTriggerEnter2D(Collider2D collision)

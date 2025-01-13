@@ -1,9 +1,13 @@
 using Pathfinding;
 using System.Collections;
 using UnityEngine;
+using Game.Utils_1;
+using System;
 
-public class Boss1: Enemy_AI
+public class Boss1: MonoBehaviour
 {
+    public static Boss1 Instance { get; private set; }
+
     private float moveSpeed = 2f; // Скорость движения врага
     private float attackCooldown = 0.3f; // Время между атаками
     public float attackDamage = 20f; // Урон от атаки врага
@@ -13,6 +17,10 @@ public class Boss1: Enemy_AI
 
     public bool isShooting = false;
     public bool blastAttack = false;
+    public bool blastAttack_1 = false;
+    public bool blastAttack_2 = false;
+    public bool blastAttack_3 = false;
+    public bool blastAttack_4 = false;
     public bool isWaiting = true;
     public float Health;
     private bool isDie;
@@ -28,31 +36,42 @@ public class Boss1: Enemy_AI
     private Animator animator; //Animator для визуализации
     private Vector3 startingPosition; // Начальная позиция врага
     public LayerMask ignoreLayer_1;
+    public Rigidbody2D rb_2;
+
+    public event EventHandler Attack_1;
+    public event EventHandler Attack_2;
 
     void Start()
     {
-        seeker = GetComponent<Seeker>();
         rb_2 = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>(); // Получаем компонент Animator
         player = GameObject.FindGameObjectWithTag("Player_1").transform; // Находим игрока по тегу
         Health = GetComponent<Enemy_2>().boss_health;
-        InvokeRepeating("UpdatePath", 0f, 0.5f);
+    }
+    private void Move_boss()
+    {
+        if (transform.position == startingPosition)
+            rb_2.MovePosition(Common2.GetRandomirPoint());
+        else
+            rb_2.MovePosition(startingPosition);
     }
     void FixedUpdate()
     {
         if (isWaiting)
         {
-
+            Move_boss();
         }
         else
         {
             if (isShooting)
             {
-
+                Move_boss();
+                Attack_1?.Invoke(this, EventArgs.Empty);
             }
             if (blastAttack)
             {
-
+                Move_boss();
+                Attack_2?.Invoke(this, EventArgs.Empty);
             }
         }
         Health = GetComponent<Enemy_2>().boss_health;

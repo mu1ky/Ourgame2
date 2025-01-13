@@ -5,12 +5,14 @@ public class Robot : Enemy_AI
 {
     private float moveSpeed = 2f; // Скорость движения врага
     private float attackCooldown = 1f; // Время между атаками
+    private float damageCooldown = 1f;
     public float attackDamage = 10f; // Урон от атаки врага
     private float agroRange = 5f; // Дистанция, при которой враг начинает атаковать игрока
     private float chaseDistance = 15f; // Дальность преследования
     //private float shootingRange = 10f; // Максимальная дистанция для стрельбы
     public float stopDistance = 0.1f;
     private float lastAttackTime; // Время последней атаки
+    private float lastDamageTime;
     public Vector2 directionToPlayer;
     public Vector2 shootingDirection;
     public float distanceToPlayer;
@@ -21,6 +23,8 @@ public class Robot : Enemy_AI
     public bool isMoving = false;
     public float Health;
     private bool isDie;
+    private bool isTakeDamage = false;
+    private bool isDam = false;
     private bool Left_1;
     private bool Right_1;
     private bool Left;
@@ -69,6 +73,7 @@ public class Robot : Enemy_AI
             }
         }
         Health = GetComponent<Enemy_1>().health_enemy;
+        Get_Health();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -168,6 +173,7 @@ public class Robot : Enemy_AI
         animator.SetBool("At_up", Up);
         animator.SetBool("At_down", Down);
         animator.SetBool("Idle", Idle);
+        animator.SetBool("Death_1", isDie);//добавить в аниматор триггер
 
         if (Time.time >= lastAttackTime + attackCooldown)
         {
@@ -249,7 +255,22 @@ public class Robot : Enemy_AI
         animator.SetBool("At_up", Up);
         animator.SetBool("At_down", Down);
         animator.SetBool("Idle", Idle);
+        animator.SetBool("Death_1", isDie);//добавить в аниматор триггер
     }
+    void GetDamage()
+    {
+        Enemy_1.Get_Damage_enemy += DamageToEnemy;
+    }
+    void DamageToEnemy()
+    {
+        isTakeDamage = true;
+        if (Time.time >= lastDamageTime + damageCooldown)
+        {
+            isTakeDamage = true;
+            lastDamageTime = Time.time;
+        }
+    }
+    //сделать тоже самое у зомби
     void Get_Health()
     {
         if (Health <= 0)
@@ -258,9 +279,8 @@ public class Robot : Enemy_AI
         }
         else
         {
-            isDie = true;
+            isDie = false;
         }
-        animator.SetBool("Death_1", isDie);//добавить в аниматор триггер
     }
 }
 

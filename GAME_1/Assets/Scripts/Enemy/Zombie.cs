@@ -73,6 +73,7 @@ public class Zombie : Enemy_AI
             Animation(startingPosition);
         }
         Health_ = GetComponent<Enemy_1>().health_enemy;
+        Get_Health();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -249,6 +250,7 @@ public class Zombie : Enemy_AI
         anim.SetBool("Down_a", IsAttackDown);
         anim.SetBool("Left_a", IsAttackLeft);
         anim.SetBool("Right_a", IsAttackRight);
+        anim.SetBool("Death_2", isDie_);//добавить в аниматор триггер
     }
     void Get_Health()
     {
@@ -258,8 +260,7 @@ public class Zombie : Enemy_AI
         }
         else
         {
-            isDie_ = true;
+            isDie_ = false;
         }
-        anim.SetBool("Death_2", isDie_);//добавить в аниматор триггер
     }
 }
