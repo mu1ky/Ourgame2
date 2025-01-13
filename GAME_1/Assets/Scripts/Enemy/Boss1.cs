@@ -9,7 +9,7 @@ public class Boss1: MonoBehaviour
     public static Boss1 Instance { get; private set; }
 
     private float moveSpeed = 2f; // Скорость движения врага
-    private float attackCooldown = 0.3f; // Время между атаками
+    private float attackCooldown = 3f; // Время между атаками
     public float attackDamage = 20f; // Урон от атаки врага
     private float lastAttackTime; // Время последней атаки
     public Vector2 directionToPlayer;
@@ -70,11 +70,21 @@ public class Boss1: MonoBehaviour
             }
             if (blastAttack)
             {
-                Move_boss();
-                Attack_2?.Invoke(this, EventArgs.Empty);
+                StartCoroutine(Attack_Boss());
+                //Move_boss();
+                //Attack_2?.Invoke(this, EventArgs.Empty);
             }
         }
         Health = GetComponent<Enemy_2>().boss_health;
+    }
+    private IEnumerator Attack_Boss()
+    {
+        while (true)
+        {
+            Move_boss();
+            Attack_2?.Invoke(this, EventArgs.Empty);
+            yield return new WaitForSeconds(5f);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

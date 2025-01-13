@@ -257,6 +257,7 @@ public class Robot : Enemy_AI
         animator.SetBool("Idle", Idle);
         animator.SetBool("Death_1", isDie);//добавить в аниматор триггер
     }
+    /*
     void GetDamage()
     {
         Enemy_1.Get_Damage_enemy += DamageToEnemy;
@@ -270,7 +271,7 @@ public class Robot : Enemy_AI
             lastDamageTime = Time.time;
         }
     }
-    //сделать тоже самое у зомби
+    */
     void Get_Health()
     {
         if (Health <= 0)

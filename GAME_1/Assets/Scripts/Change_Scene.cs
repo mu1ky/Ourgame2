@@ -17,15 +17,11 @@ public class Change_Scene : MonoBehaviour
             
             if (h != null)
             {
-                /*
                 if (h.count_Key >= 3)
                 {
                     DontDestroyOnLoad(gameObject); //сохраняем сам скрипт
                     NextLevel();
                 }
-                */
-                DontDestroyOnLoad(gameObject); //сохраняем сам скрипт
-                NextLevel();
             }
         }
     }
