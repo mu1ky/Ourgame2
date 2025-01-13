@@ -15,9 +15,15 @@ D:/Ourgame2/GAME_1
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
+<<<<<<< Updated upstream
 49825
 Successfully changed project path to: D:/Ourgame2/GAME_1
 D:/Ourgame2/GAME_1
+=======
+54797
+Successfully changed project path to: D:/Programs/GitHub/Ourgame2/GAME_1
+D:/Programs/GitHub/Ourgame2/GAME_1
+>>>>>>> Stashed changes
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -49,12 +55,23 @@ D:/Ourgame2/GAME_1
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
+<<<<<<< Updated upstream
 Player connection [11032]  Target information:
 
 Player connection [11032] Host joined multi-casting on [225.0.0.222:54997]...
 Player connection [11032] Host joined alternative multi-casting on [225.0.0.222:34997]...
 [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
 Refreshing native plugins compatible for Editor in 13.16 ms, found 4 plugins.
+=======
+Player connection [1768]  Target information:
+
+Player connection [1768]  * "[IP] 192.168.237.203 [Port] 0 [Flags] 2 [Guid] 3315074304 [EditorId] 3315074304 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-8CIN4IG) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [1768] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [1768] Host joined alternative multi-casting on [225.0.0.222:34997]...
+[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
+Refreshing native plugins compatible for Editor in 24.78 ms, found 4 plugins.
+>>>>>>> Stashed changes
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.44f1 (c3ae09b9f03c)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.44f1/Editor/Data/Resources/UnitySubsystems
@@ -67,6 +84,7 @@ Direct3D:
     VRAM:     3995 MB
     Driver:   27.20.100.9664
 Initialize mono
+<<<<<<< Updated upstream
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.44f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.44f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.44f1/Editor/Data/MonoBleedingEdge/etc'
@@ -81,11 +99,28 @@ Mono: successfully reloaded assembly
 - Finished resetting the current domain, in  0.463 seconds
 Domain Reload Profiling: 1098ms
 	BeginReloadAssembly (142ms)
+=======
+Mono path[0] = 'D:/Programs/2022.3.44f1/Editor/Data/Managed'
+Mono path[1] = 'D:/Programs/2022.3.44f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/Programs/2022.3.44f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56996
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Programs/2022.3.44f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.008530 seconds.
+- Loaded All Assemblies, in  0.958 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.532 seconds
+Domain Reload Profiling: 1489ms
+	BeginReloadAssembly (461ms)
+>>>>>>> Stashed changes
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
+<<<<<<< Updated upstream
 	RebuildCommonClasses (52ms)
 	RebuildNativeTypeToScriptingClass (15ms)
 	initialDomainReloadingComplete (95ms)
@@ -108,6 +143,30 @@ Domain Reload Profiling: 1098ms
 			BeforeProcessingInitializeOnLoad (3ms)
 			ProcessInitializeOnLoadAttributes (249ms)
 			ProcessInitializeOnLoadMethodAttributes (76ms)
+=======
+	RebuildCommonClasses (79ms)
+	RebuildNativeTypeToScriptingClass (29ms)
+	initialDomainReloadingComplete (112ms)
+	LoadAllAssembliesAndSetupDomain (276ms)
+		LoadAssemblies (458ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (273ms)
+			TypeCache.Refresh (271ms)
+				TypeCache.ScanAssembly (245ms)
+			ScanForSourceGeneratedMonoScriptInfo (1ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (533ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (441ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (18ms)
+			SetLoadedEditorAssemblies (23ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (4ms)
+			ProcessInitializeOnLoadAttributes (306ms)
+			ProcessInitializeOnLoadMethodAttributes (90ms)
+>>>>>>> Stashed changes
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -116,20 +175,31 @@ Domain Reload Profiling: 1098ms
 Worker process is ready to serve import requests
 Caller must complete domain reload
 Begin MonoManager ReloadAssembly
+<<<<<<< Updated upstream
 - Loaded All Assemblies, in  1.187 seconds
+=======
+- Loaded All Assemblies, in  1.568 seconds
+>>>>>>> Stashed changes
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
+<<<<<<< Updated upstream
 - Finished resetting the current domain, in  1.944 seconds
 Domain Reload Profiling: 3132ms
 	BeginReloadAssembly (218ms)
+=======
+- Finished resetting the current domain, in  1.404 seconds
+Domain Reload Profiling: 2971ms
+	BeginReloadAssembly (564ms)
+>>>>>>> Stashed changes
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (13ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
+<<<<<<< Updated upstream
 		CreateAndSetChildDomain (36ms)
 	RebuildCommonClasses (49ms)
 	RebuildNativeTypeToScriptingClass (19ms)
@@ -164,6 +234,43 @@ Unloading 6214 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 36 unused Assets / (347.3 KB). Loaded Objects now: 6684.
 Memory consumption went from 232.3 MB to 231.9 MB.
 Total: 6.754400 ms (FindLiveObjects: 0.583100 ms CreateObjectMapping: 0.662300 ms MarkObjects: 5.322500 ms  DeleteObjects: 0.185300 ms)
+=======
+		CreateAndSetChildDomain (31ms)
+	RebuildCommonClasses (54ms)
+	RebuildNativeTypeToScriptingClass (18ms)
+	initialDomainReloadingComplete (66ms)
+	LoadAllAssembliesAndSetupDomain (864ms)
+		LoadAssemblies (812ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (514ms)
+			TypeCache.Refresh (428ms)
+				TypeCache.ScanAssembly (402ms)
+			ScanForSourceGeneratedMonoScriptInfo (72ms)
+			ResolveRequiredComponents (13ms)
+	FinalizeReload (1405ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1129ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (10ms)
+			SetLoadedEditorAssemblies (8ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (166ms)
+			ProcessInitializeOnLoadAttributes (806ms)
+			ProcessInitializeOnLoadMethodAttributes (133ms)
+			AfterProcessingInitializeOnLoad (5ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (11ms)
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 5.65 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 6150 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 40 unused Assets / (0.8 MB). Loaded Objects now: 6618.
+Memory consumption went from 216.5 MB to 215.7 MB.
+Total: 5.461800 ms (FindLiveObjects: 0.546600 ms CreateObjectMapping: 0.347700 ms MarkObjects: 4.138900 ms  DeleteObjects: 0.427000 ms)
+>>>>>>> Stashed changes
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -181,11 +288,48 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
+<<<<<<< Updated upstream
   Time since last request: 305.975224 seconds.
   path: Assets/UniversalRenderPipelineGlobalSettings.asset
   artifactKey: Guid(93b439a37f63240aca3dd4e01d978a9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/UniversalRenderPipelineGlobalSettings.asset using Guid(93b439a37f63240aca3dd4e01d978a9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
  -> (artifact id: '6f078c1fb6f83acb75f2bfdd4f7d1340') in 0.024085 seconds
+=======
+  Time since last request: 6490.362746 seconds.
+  path: Assets/Sprites/Environment/Red_Door.gif
+  artifactKey: Guid(6cc2d861b87b61e4498c4ac8f3ee5ff8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Environment/Red_Door.gif using Guid(6cc2d861b87b61e4498c4ac8f3ee5ff8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
+ -> (artifact id: 'd24c48ada8ed057b806761f48df8ed5e') in 0.136004 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 3.348884 seconds.
+  path: Assets/Sprites/Environment/Red_Door.asset
+  artifactKey: Guid(6f40740ed7018d248810879b35e91ede) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Environment/Red_Door.asset using Guid(6f40740ed7018d248810879b35e91ede) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
+ -> (artifact id: '115ac329684d564cb135ebe529b87d0b') in 0.077813 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 81.434177 seconds.
+  path: Assets/Sprites/Environment/Red_Door.gif
+  artifactKey: Guid(6cc2d861b87b61e4498c4ac8f3ee5ff8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Environment/Red_Door.gif using Guid(6cc2d861b87b61e4498c4ac8f3ee5ff8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
+ -> (artifact id: '27934d4931fff81c0db1c8ae0019f707') in 0.025564 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 86.856220 seconds.
+  path: Assets/Sprites/Environment/New Animated Tile.asset
+  artifactKey: Guid(ec0725b322f3bb84bad4c49fcec2ce0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Environment/New Animated Tile.asset using Guid(ec0725b322f3bb84bad4c49fcec2ce0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
+ -> (artifact id: '8716bca7eb7bfd3ab2426f0acfceeb52') in 0.002972 seconds
+>>>>>>> Stashed changes
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 1
 ========================================================================
@@ -388,6 +532,7 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
+<<<<<<< Updated upstream
   Time since last request: 256.606768 seconds.
   path: Assets/Scenes/First_scene
   artifactKey: Guid(2c42ed864b6f11c4292f09fd731537e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
@@ -527,3 +672,129 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+=======
+  Time since last request: 152.892474 seconds.
+  path: Assets/Sprites/Environment/1.asset
+  artifactKey: Guid(ec0725b322f3bb84bad4c49fcec2ce0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Environment/1.asset using Guid(ec0725b322f3bb84bad4c49fcec2ce0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
+ -> (artifact id: '6683e2e06491198d26eb6b08ddbedb5d') in 0.002658 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.287835 seconds.
+  path: Assets/Sprites/Environment
+  artifactKey: Guid(319294672336ef546bf78f6b11b77ba2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Environment using Guid(319294672336ef546bf78f6b11b77ba2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
+ -> (artifact id: '5daf1796c27e0d0ff50b980dda4178c5') in 0.000623 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 33.375485 seconds.
+  path: Assets/Sprites/Environment/red door
+  artifactKey: Guid(14c9b2738a92318479dfcad611de82f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Environment/red door using Guid(14c9b2738a92318479dfcad611de82f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
+ -> (artifact id: 'ca46c98b7621145aba60c7bb6f98b146') in 0.000619 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 10.896678 seconds.
+  path: Assets/Sprites/Environment/red door/2.asset
+  artifactKey: Guid(f7ce3224bfbff39408c7e2606eca1132) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Environment/red door/2.asset using Guid(f7ce3224bfbff39408c7e2606eca1132) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
+ -> (artifact id: '877cec2609034f2c5970a2681e6c5326') in 0.003441 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 39.253849 seconds.
+  path: Assets/Sprites/Environment/red door/New Animated Tile.asset
+  artifactKey: Guid(1be74896cea865a48b9b6b19f5dd4bdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Environment/red door/New Animated Tile.asset using Guid(1be74896cea865a48b9b6b19f5dd4bdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
+ -> (artifact id: '8832a8482fddad76c673b1f7af4084fc') in 0.001884 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 1.715278 seconds.
+  path: Assets/Sprites/Environment/red door/2.asset
+  artifactKey: Guid(f7ce3224bfbff39408c7e2606eca1132) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Environment/red door/2.asset using Guid(f7ce3224bfbff39408c7e2606eca1132) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
+ -> (artifact id: '7c55404fdde5794fa30f01c379fa580e') in 0.002917 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Sprites/Environment/red door/New Animated Tile 1.asset
+  artifactKey: Guid(a4edae314f9f51943a4d755c73640ece) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Environment/red door/New Animated Tile 1.asset using Guid(a4edae314f9f51943a4d755c73640ece) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
+ -> (artifact id: '76fe1937b27bd4fa28c4a2b8e765a49d') in 0.001907 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.414216 seconds.
+  path: Assets/Sprites/Environment/red door/New Animated Tile 2.asset
+  artifactKey: Guid(484a8b45a32b61940874213393e3c700) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Environment/red door/New Animated Tile 2.asset using Guid(484a8b45a32b61940874213393e3c700) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
+ -> (artifact id: '73ea44de5090bfeb8e9ce2c878b793ed') in 0.001366 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.345326 seconds.
+  path: Assets/Sprites/Environment/red door/New Animated Tile 3.asset
+  artifactKey: Guid(e078476263055c340a6f20481f5960de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Environment/red door/New Animated Tile 3.asset using Guid(e078476263055c340a6f20481f5960de) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
+ -> (artifact id: '859b2e3e65c728a162d1c27e1b3cb8e0') in 0.001628 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.244678 seconds.
+  path: Assets/Sprites/Environment/red door/New Animated Tile 4.asset
+  artifactKey: Guid(439b627c887452740856b5381e0f498d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Environment/red door/New Animated Tile 4.asset using Guid(439b627c887452740856b5381e0f498d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
+ -> (artifact id: 'e2c765d8e37c7e152d7671c447761461') in 0.001737 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.169407 seconds.
+  path: Assets/Sprites/Environment/red door/New Animated Tile 5.asset
+  artifactKey: Guid(7796fc5fe81ebd248893a7930b7e4071) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Environment/red door/New Animated Tile 5.asset using Guid(7796fc5fe81ebd248893a7930b7e4071) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
+ -> (artifact id: '1b416bdcc304553c4bdb76c375634ed9') in 0.001395 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.252398 seconds.
+  path: Assets/Sprites/Environment/red door/New Animated Tile 6.asset
+  artifactKey: Guid(1041a88a8631099479bc243114f9b0af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Environment/red door/New Animated Tile 6.asset using Guid(1041a88a8631099479bc243114f9b0af) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
+ -> (artifact id: 'edfa42b5df8c2c0183cae51e28655404') in 0.001411 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 14.094017 seconds.
+  path: Assets/Sprites/Environment/red door/3.asset
+  artifactKey: Guid(1be74896cea865a48b9b6b19f5dd4bdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Environment/red door/3.asset using Guid(1be74896cea865a48b9b6b19f5dd4bdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
+ -> (artifact id: '796689f272ec41ee40441de050095534') in 0.002761 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 213.369823 seconds.
+  path: Assets/Sprites/Environment/red door/4.asset
+  artifactKey: Guid(a4edae314f9f51943a4d755c73640ece) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/Environment/red door/4.asset using Guid(a4edae314f9f51943a4d755c73640ece) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 4 workers.
+ -> (artifact id: '66087c1bed3603036e4877f21cfdf8b1') in 0.004443 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+>>>>>>> Stashed changes
