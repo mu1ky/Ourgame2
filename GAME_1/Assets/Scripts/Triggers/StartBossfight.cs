@@ -10,7 +10,7 @@ public class StartBossfight : MonoBehaviour
         if (collision.gameObject.tag == "Player_1")
         {
             Boss1.Instance.isWaiting = false;
-            Boss1.Instance.isWaiting = true;
+            Boss1.Instance.isShooting = true;
         }
     }
 }

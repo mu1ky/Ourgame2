@@ -10,7 +10,6 @@ public class Start_Work : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
         DontDestroyOnLoad(this);
         testScript = gameObject.AddComponent<SendDataHero>();
     }
@@ -18,6 +17,10 @@ public class Start_Work : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (SceneManager.GetActiveScene().name == "End")
+        {
+            testScript = GetComponent<SendDataHero>();
+            Destroy(testScript);
+        }
     }
 }

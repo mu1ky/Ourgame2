@@ -9,9 +9,9 @@ public class Boss1: MonoBehaviour
     public static Boss1 Instance { get; private set; }
 
     private float moveSpeed = 2f; // Скорость движения врага
-    private float attackCooldown = 3f; // Время между атаками
+    private float attackCooldown_b1 = 3f; // Время между атаками
     public float attackDamage = 20f; // Урон от атаки врага
-    private float lastAttackTime; // Время последней атаки
+    private float lastAttackTime_b1; // Время последней атаки
     public Vector2 directionToPlayer;
     public float distanceToPlayer;
 
@@ -22,7 +22,7 @@ public class Boss1: MonoBehaviour
     public bool blastAttack_3 = false;
     public bool blastAttack_4 = false;
     public bool isWaiting = true;
-    public float Health;
+    public float Health_1;
     private bool isDie;
     private bool Left_shooting;
     private bool Right_shooting;
@@ -46,7 +46,7 @@ public class Boss1: MonoBehaviour
         rb_2 = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>(); // Получаем компонент Animator
         player = GameObject.FindGameObjectWithTag("Player_1").transform; // Находим игрока по тегу
-        Health = GetComponent<Enemy_2>().boss_health;
+        Health_1 = GetComponent<Enemy_2>().boss_health;
     }
     private void Move_boss()
     {
@@ -57,7 +57,7 @@ public class Boss1: MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (isWaiting)
+        if (isWaiting == true)
         {
             Move_boss();
         }
@@ -70,20 +70,20 @@ public class Boss1: MonoBehaviour
             }
             if (blastAttack)
             {
-                StartCoroutine(Attack_Boss());
+                Attack_Boss();
                 //Move_boss();
                 //Attack_2?.Invoke(this, EventArgs.Empty);
             }
         }
-        Health = GetComponent<Enemy_2>().boss_health;
+        Health_1 = GetComponent<Enemy_2>().boss_health;
     }
-    private IEnumerator Attack_Boss()
+    private void Attack_Boss()
     {
-        while (true)
+        if(Time.time >= lastAttackTime_b1 + attackCooldown_b1)
         {
             Move_boss();
             Attack_2?.Invoke(this, EventArgs.Empty);
-            yield return new WaitForSeconds(5f);
+            lastAttackTime_b1 = Time.time;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -116,4 +116,5 @@ public class Boss1: MonoBehaviour
     {
         
     }
+    //логика смены анимации
 }

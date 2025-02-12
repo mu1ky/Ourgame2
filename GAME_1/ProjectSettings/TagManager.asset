@@ -13,9 +13,12 @@ TagManager:
   - Blast2
   - Blast3
   - Blast4
-  - Bullet
   - Grenada
   - Medicine
+  - BulletBoss
+  - BulletHero
+  - BulletRobot
+  - GunPlayer
   layers:
   - Default
   - TransparentFX

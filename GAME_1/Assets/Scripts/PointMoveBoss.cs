@@ -14,6 +14,7 @@ public class PointMoveBoss : MonoBehaviour
     private GameObject bullet;
     private GameObject grenada;
     //параметры центра вращения поменять нужно
+    public Vector2 PointPos;
 
     private void Start()
     {
@@ -32,6 +33,24 @@ public class PointMoveBoss : MonoBehaviour
     {
         if (Time.time >= lastAttackTime_boss + attackCooldown_boss)
         {
+            if (Boss1.Instance.blastAttack_1 == true)
+            {
+                PointPos = new Vector2();
+            }
+            if (Boss1.Instance.blastAttack_2 == true)
+            {
+                PointPos = new Vector2();
+            }
+            if (Boss1.Instance.blastAttack_3 == true)
+            {
+                PointPos = new Vector2();
+            }
+            if (Boss1.Instance.blastAttack_4 == true)
+            {
+                PointPos = new Vector2();
+            }
+            //посмотреть какие значения тут нужно подставить
+            transform.position = PointPos;
             lastAttackTime_boss = Time.time;
             Instantiate(grenada, transform.position, Quaternion.identity);
         }
@@ -48,7 +67,10 @@ public class PointMoveBoss : MonoBehaviour
 
     void Update()
     {
-        Vector2 newPos = GetPositionOnCircle(StartCenterX, StartCenterY); 
-        transform.position = new Vector3(newPos.x, newPos.y, transform.position.z);
+        if (Boss1.Instance.isShooting == true)
+        {
+            Vector2 newPos = GetPositionOnCircle(StartCenterX, StartCenterY);
+            transform.position = new Vector3(newPos.x, newPos.y, transform.position.z);
+        }
     }
 }

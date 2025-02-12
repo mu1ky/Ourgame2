@@ -7,6 +7,7 @@ public class SendDataHero: MonoBehaviour
     public DataHero hero;
     private void Awake()
     {
+        
         hero = GameObject.FindGameObjectWithTag("Player_1").GetComponent<DataHero>();
     }
     private void Update()

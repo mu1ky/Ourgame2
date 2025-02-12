@@ -17,9 +17,13 @@ public class Gun : MonoBehaviour
     public float attackCooldown_hero = 1f;
     public float dam = 10f;
     public GameObject DamageEffect;
+    public GameObject pref_1;
+    public GameObject bul_hero;
+    public float bul_speed_1;
     [SerializeField] private bool isAttacking = false;
     [SerializeField] private bool isCollider = false;
     public LayerMask ignoreLayer_2;
+
     public bool IsAttacking()
     {
         return isAttacking;
@@ -34,7 +38,7 @@ public class Gun : MonoBehaviour
     }
     private void Update()
     {
-        if (Player.Instance.NowIsShooting())
+        if (Player.Instance.NowIsShooting_1())
         {
             Shoot();
         }
@@ -70,12 +74,17 @@ public class Gun : MonoBehaviour
                         Enemy_1 enemy = hit.collider.GetComponent<Enemy_1>();
                         Debug.Log("Attack! Damage: " + dam);
                         enemy.TakeDamage_enemy(dam);
+                        bul_hero = Instantiate(pref_1, _shotpoint.position, Quaternion.identity);
+                        if (bul_hero != null)
+                        {
+                            bul_hero.GetComponent<Rigidbody2D>().velocity = _shotpoint_dir * bul_speed_1;
+                        }
                     }
                     //Debug.Log("Attack! Damage: " + dam + " " + hit.collider.tag);
                     /*
                     isCollider = true;
                     obstacle = Instantiate(DamageEffect, hit.point, Quaternion.identity);
-                    If (obstacle == null)
+                    if (obstacle == null)
                     {	
                         isCollider = false;
                     }

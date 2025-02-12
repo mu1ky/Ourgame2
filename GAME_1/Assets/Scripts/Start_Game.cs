@@ -6,12 +6,10 @@ using UnityEngine.SceneManagement;
 public class Start_Game : MonoBehaviour
 {
     void Start()
-    {
-
+    { 
     }
     void Update()
     {
-        
     }
     public void NextLevel()
     {

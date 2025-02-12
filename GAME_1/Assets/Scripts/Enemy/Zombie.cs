@@ -149,7 +149,6 @@ public class Zombie : Enemy_AI
             rb_2.velocity = directionToStart * moveSpeed;
             IsWalking = true;
             IsAttacking = false;
-
         }
         else
         {
@@ -219,7 +218,6 @@ public class Zombie : Enemy_AI
                 {
                     IsAttackLeft = true;
                     IsWalkLeft = false;
-
                 }
                 if (IsWalking == true)
                 {

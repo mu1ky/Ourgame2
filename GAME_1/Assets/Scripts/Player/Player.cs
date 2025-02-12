@@ -36,7 +36,8 @@ public class Player : MonoBehaviour
     private bool isStandingDown;
     private bool isStandingRight;
     private bool isStandingLeft;
-    public bool isShooting = false;
+    public bool isShooting_1 = false;
+    public bool isShooting_2 = false;
     private bool isShootingUp;
     private bool isShootingDown;
     private bool isShootingLeft;
@@ -117,13 +118,13 @@ public class Player : MonoBehaviour
     {
         return isShootingLeft;
     }
-    public bool NowIsShooting()
+    public bool NowIsShooting_1()
     {
-        return isShooting;
+        return isShooting_1;
     }
     public bool ReturnToIdle()
     {
-        return !isShooting;
+        return !isShooting_1;
     }
     private void HandleMovement()
     {
@@ -173,15 +174,15 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Alpha2))
         {
-            isShooting = true;
+            isShooting_1 = true;
             _gun.SetActive(true);
         }
         if (Input.GetKey(KeyCode.Alpha1))
         {
-            isShooting = false;
+            isShooting_1 = false;
             _gun.SetActive(false);
         }
-        return isShooting;
+        return isShooting_1;
     }
     private void Animation(bool isShooting)
     {

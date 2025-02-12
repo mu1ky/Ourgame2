@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -28,8 +29,9 @@ public class Change_Scene : MonoBehaviour
     public void NextLevel()
     {
         var index = SceneManager.GetActiveScene().buildIndex;
-        var ind = SceneManager.GetSceneByName("Win").buildIndex;
-        if (index != ind - 1) { 
+        var ind_1 = SceneManager.GetSceneByName("Win").buildIndex;
+        var ind_2 = SceneManager.GetSceneByName("End").buildIndex;
+        if ((index != ind_1 - 1)) { 
             SceneManager.LoadScene(index + 1);
             AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive); //, LoadSceneMode.Additive);
 

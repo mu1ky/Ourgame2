@@ -1,4 +1,5 @@
 using Pathfinding;
+using System;
 using System.Collections;
 using UnityEngine;
 public class Robot : Enemy_AI
@@ -40,6 +41,11 @@ public class Robot : Enemy_AI
     private Vector3 startingPosition; // Начальная позиция врага
     public LayerMask ignoreLayer_1;
 
+    public GameObject pref_2;
+    public GameObject bul_robot;
+    public float bul_speed_2;
+    public static bool IsRobot = true;
+
     void Start()
     {
         seeker = GetComponent<Seeker>();
@@ -74,6 +80,7 @@ public class Robot : Enemy_AI
         }
         Health = GetComponent<Enemy_1>().health_enemy;
         Get_Health();
+        //GetDamage();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -184,10 +191,15 @@ public class Robot : Enemy_AI
                 {
                     Player player_1 = hit.collider.GetComponent<Player>();
                     Debug.Log("Attack! Damage: " + attackDamage);
+                    Debug.Log("Attack! Damage: " + hit.collider.tag);
                     player_1.TakeDamage_hero(attackDamage);
                     player_1.TakeHP_hero();
+                    bul_robot = Instantiate(pref_2, shootpoint.position, Quaternion.identity);
+                    if (bul_robot != null)
+                    {
+                        bul_robot.GetComponent<Rigidbody2D>().velocity = shootingDirection * bul_speed_2;
+                    }
                 }
-                //Debug.Log("Attack! Damage: " + hit.collider.tag);
             }
             lastAttackTime = Time.time;
         }
@@ -219,7 +231,7 @@ public class Robot : Enemy_AI
         }
         else
         {
-            rb_2.velocity = Vector2.zero; // Останавливаемся, как только достигли начальной позиции
+            rb_2.velocity = Vector2.zero; 
         }
         AnimationMove(startingPosition);
     }
@@ -257,6 +269,7 @@ public class Robot : Enemy_AI
         animator.SetBool("Idle", Idle);
         animator.SetBool("Death_1", isDie);//добавить в аниматор триггер
     }
+    //если заработает, тоже самое во все скприпты врагов
     /*
     void GetDamage()
     {
@@ -267,7 +280,7 @@ public class Robot : Enemy_AI
         isTakeDamage = true;
         if (Time.time >= lastDamageTime + damageCooldown)
         {
-            isTakeDamage = true;
+            isTakeDamage = false;
             lastDamageTime = Time.time;
         }
     }
