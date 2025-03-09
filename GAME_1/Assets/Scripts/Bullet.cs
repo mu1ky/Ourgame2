@@ -76,12 +76,12 @@ public class Bullet : MonoBehaviour
     }
     void Awake()
     {
-        if (gameObject.tag == "Bullet")
+        if (gameObject.tag == "BulletBoss")
         {
             isBullet = true;
             isGrenada = false;
         }
-        if (gameObject.tag == "Grenada")
+        if (gameObject.tag == "GrenadaBoss")
         {
             isBullet = false;
             isGrenada = true;

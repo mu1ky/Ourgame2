@@ -35,10 +35,10 @@ public class BlastAttack : MonoBehaviour
                 Boss1.Instance.blastAttack_1 = Boss1.Instance.blastAttack_2 = Boss1.Instance.blastAttack_3 = false;
             }
         }
-        if ((collision.gameObject.tag == "Bullet") || (collision.gameObject.tag == "Grenada"))
+        if ((collision.gameObject.tag == "BulletBoss") || (collision.gameObject.tag == "GrenadaBoss"))
         {
             Instantiate(explosion, collision.transform.position, Quaternion.identity);
-            if (collision.gameObject.tag == "Grenada")
+            if (collision.gameObject.tag == "GrenadaBoss")
             {
                 if (PlayerHere == true)
                 {

@@ -6,7 +6,6 @@ public class Simple_bullet : MonoBehaviour
 {
     public bool IsPlayer = false;
     public bool IsEnemy = false;
-    public Vector2 shootDir;
 
     private void Awake()
     {
@@ -18,12 +17,6 @@ public class Simple_bullet : MonoBehaviour
         {
             IsEnemy = true;
         }
-    }
-    private void Start()
-    {
-    }
-    private void Update()
-    {
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -45,9 +38,5 @@ public class Simple_bullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(gameObject, 1f);
-    }
-    public void DirBul(Vector2 DIR)
-    {
-        shootDir = DIR;
     }
 }

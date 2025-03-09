@@ -42,13 +42,19 @@ public class Player : MonoBehaviour
     private bool isShootingDown;
     private bool isShootingLeft;
     private bool isShootingRight;
+    private bool isDropingGrenadaUp;
+    private bool isDropingGrenadaDown;
+    private bool isDropingGrenadaLeft;
+    private bool isDropingGrenadaRight;
 
     public GameObject _gun;
+    public GameObject _grenada;
 
     public event EventHandler TakeHP;
     public event EventHandler TakeCount;
     public event EventHandler TakeMed;
     public byte count_Key = 0;
+    public byte count_Gre = 0;
 
     public bool IsAttacking_()
     {
@@ -86,6 +92,22 @@ public class Player : MonoBehaviour
     {
         return isAttackingLeft;
     }
+    public bool IsDropingGrenadaUp()
+    {
+        return isDropingGrenadaUp;
+    }
+    public bool IsDropingGrenadaDown()
+    {
+        return isDropingGrenadaDown;
+    }
+    public bool IsDropingGrenadaRight()
+    {
+        return isDropingGrenadaRight;
+    }
+    public bool IsDropingGrenadaLeft()
+    {
+        return isDropingGrenadaLeft;
+    }
     public bool IsStandingUp()
     {
         return isStandingUp;
@@ -122,15 +144,19 @@ public class Player : MonoBehaviour
     {
         return isShooting_1;
     }
+    public bool NowIsShooting_2()
+    {
+        return isShooting_2;
+    }
     public bool ReturnToIdle()
     {
         return !isShooting_1;
     }
     private void HandleMovement()
     {
+        inputVector = inputVector.normalized;
         speed_to_axis = inputVector * (speed_player * Time.fixedDeltaTime);
         rb.MovePosition(rb.position + speed_to_axis);
-        inputVector = inputVector.normalized;
     }
     private void Awake()
     {
@@ -140,6 +166,10 @@ public class Player : MonoBehaviour
     private void Start()
     {
         _gun.SetActive(false);
+        if (_grenada != null)
+        {
+            _grenada.SetActive(false);
+        }
     }
     private void FixedUpdate()
     {
@@ -168,23 +198,42 @@ public class Player : MonoBehaviour
         {
             inputVector.x = 1f;
         }
-        Animation(moving_mode());
+        Animation();
     }
-    public bool moving_mode()
+    public void moving_mode()
     {
         if (Input.GetKey(KeyCode.Alpha2))
         {
             isShooting_1 = true;
             _gun.SetActive(true);
+            isShooting_2 = false;
+            if (_grenada != null)
+            {
+                _grenada.SetActive(false);
+            }
         }
         if (Input.GetKey(KeyCode.Alpha1))
         {
             isShooting_1 = false;
             _gun.SetActive(false);
+            isShooting_2 = false;
+            if (_grenada != null)
+            {
+                _grenada.SetActive(false);
+            }
         }
-        return isShooting_1;
+        if (Input.GetKey(KeyCode.Alpha3))
+        {
+            if (_grenada != null)
+            {
+                isShooting_2 = true;
+                _grenada.SetActive(true);
+            }
+            isShooting_1 = false;
+            _gun.SetActive(false);
+        }
     }
-    private void Animation(bool isShooting)
+    private void Animation()
     {
         isUpDown = false;
 
@@ -210,42 +259,55 @@ public class Player : MonoBehaviour
         isShootingRight = false;
         isShootingLeft = false;
 
+        isDropingGrenadaUp = false;
+        isDropingGrenadaDown = false;
+        isDropingGrenadaLeft = false;
+        isDropingGrenadaRight = false;
+
         if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S))
         {
             togetherY = true;
         }
         if (Input.GetKey(KeyCode.W) && togetherY == false)
         {
-            if(isShooting == false)
+            if (isShooting_1 == false && isShooting_2 == false)
             {
                 isRunningUp = true;
             }
-            else
+            else if (isShooting_1 == true)
             {
                 isAttackingUp = true;
                 isShootingUp = true;
             }
+            else if (isShooting_2 == true)
+            {
+                isDropingGrenadaUp = true;
+            }
             isUpDown = true;
         }
-        if (Input.GetKeyUp(KeyCode.W) && isShooting)
+        if (Input.GetKeyUp(KeyCode.W) && isShooting_1)
         {
             isStandingUp = true;
             isShootingUp = true;
         }     
         if (Input.GetKey(KeyCode.S) && togetherY == false)
         {
-            if (isShooting == false)
+            if (isShooting_1 == false && isShooting_2 == false)
             {
                 isRunningDown = true;
             }
-            else
+            else if (isShooting_1 == true)
             {
                 isAttackingDown = true;
                 isShootingDown = true;
             }
+            else if (isShooting_2 == true)
+            {
+                isDropingGrenadaDown = true;
+            }
             isUpDown = true;
         }
-        if (Input.GetKeyUp(KeyCode.S) && isShooting)
+        if (Input.GetKeyUp(KeyCode.S) && isShooting_1)
         {
             isStandingDown = true;
             isShootingDown = true;
@@ -259,19 +321,23 @@ public class Player : MonoBehaviour
         {
             if (isUpDown == false)
             {
-                if (isShooting == false)
+                if (isShooting_1 == false && isShooting_2 == false)
                 {
                     isRunningLeftRight = true;
                     rev = true;
                 }
-                else 
+                else if (isShooting_1 == true)
                 { 
                     isAttackingLeft = true;
                     isShootingLeft = true;
                 }
+                else if (isShooting_2 == true)
+                {
+                    isDropingGrenadaLeft = true;
+                }
             } 
         }
-        if (Input.GetKeyUp(KeyCode.A) && isShooting)
+        if (Input.GetKeyUp(KeyCode.A) && isShooting_1)
         {
             isStandingLeft = true;
             isShootingLeft = true;
@@ -281,19 +347,23 @@ public class Player : MonoBehaviour
         {
             if (isUpDown == false)
             {
-                if (isShooting == false)
+                if (isShooting_1 == false && isShooting_2 == false)
                 {
                     isRunningLeftRight = true;
                     rev = false;
                 }
-                else 
+                else if (isShooting_1 == true)
                 { 
                     isAttackingRight = true;
                     isShootingRight = true;
                 }
+                else if (isShooting_2 == true)
+                {
+                    isDropingGrenadaRight = true;
+                }
             }
         }
-        if (Input.GetKeyUp(KeyCode.D) && isShooting)
+        if (Input.GetKeyUp(KeyCode.D) && isShooting_1)
         {
             isStandingRight = true;
             isShootingRight = true;
@@ -354,11 +424,22 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject, 0.5f);
             TakeCountKey();
         }
-        if (collision.gameObject.tag == "Key")
+        if (collision.gameObject.tag == "Medicine")
         {
             health_hero = +5f;
             Destroy(collision.gameObject, 0.5f);
             TakeMedicine();
+        }
+        if (collision.gameObject.tag == "GrenadaPlayer")
+        {
+            count_Gre += 1;
+            if (count_Gre < 1)
+            {
+                collision.transform.SetParent(gameObject.transform);
+                collision.gameObject.transform.position = new Vector3(1, 1, 0);
+                _grenada = collision.gameObject;
+                _grenada.SetActive(false);
+            }
         }
     }
     private void OnTriggerStay2D(Collider2D collision)
