@@ -7,11 +7,13 @@ namespace Game.Utils_1
 {
     public static class Common2
     {
+        /*
         public static float maxSpeed = 73f;
         public static float minSpeed = 55f;
-        public static Vector3 GetRandomirPoint()
+        */
+        public static Vector3 GetRandomirPoint(float min_, float max_)
         {
-            float x = UnityEngine.Random.Range(minSpeed, maxSpeed);
+            float x = UnityEngine.Random.Range(min_, max_);
             return new Vector3(x, 0f, 0f); // y и z компоненты равны 0
         }
         public static float RandomFloatBetween(float min, float max)

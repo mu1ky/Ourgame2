@@ -4,6 +4,7 @@ using System.Transactions;
 using UnityEngine;
 using System;
 
+//работает по примерно той же логике что и скрипт ButtonBoss
 public class Boss2 : MonoBehaviour
 {
     public static Boss2 Instance { get; private set; }
@@ -86,11 +87,11 @@ public class Boss2 : MonoBehaviour
     }
     private void Update()
     {
-        boss_pos = transform;
         if (Health_2 <= 0f)
         {
             StopCoroutine(createCoroutine);
             StopCoroutine(moveCoroutine);
+            Destroy(gameObject, 1f);
         }
     }
 }

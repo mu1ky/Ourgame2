@@ -41,6 +41,7 @@ public class Boss1: MonoBehaviour
     public event EventHandler Attack_1;
     public event EventHandler Attack_2;
 
+    //инициализируем необходимые компоненты
     void Start()
     {
         rb_2 = GetComponent<Rigidbody2D>();
@@ -48,10 +49,14 @@ public class Boss1: MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player_1").transform; // Находим игрока по тегу
         Health_1 = GetComponent<Enemy_2>().boss_health;
     }
+    //описание движения босса по комнате
+    //движение будет происходить по одной координате
     private void Move_boss()
     {
+        //если движение ещё не началось, и босс стоит на месте
         if (transform.position == startingPosition)
-            rb_2.MovePosition(Common2.GetRandomirPoint());
+            rb_2.MovePosition(Common2.GetRandomirPoint(55, 73));
+        //движение к выбранной рандомно точке
         else
             rb_2.MovePosition(startingPosition);
     }
@@ -60,31 +65,38 @@ public class Boss1: MonoBehaviour
         if (isWaiting == true)
         {
             Move_boss();
+            //если герой находится вне команты, то босс просто ходит
         }
         else
         {
             if (isShooting)
             {
+                //если герой не подошёл к укрытиям, то босс стреляет множество пуль во все стороны
                 Move_boss();
                 Attack_1?.Invoke(this, EventArgs.Empty);
+                //событие выше запускает вылет пуль
             }
             if (blastAttack)
             {
+                //если герой уже подошёл к укрытиям, то босс стреляет именно в ту область, где находится герой
                 Attack_Boss();
                 //Move_boss();
                 //Attack_2?.Invoke(this, EventArgs.Empty);
             }
         }
         Health_1 = GetComponent<Enemy_2>().boss_health;
+        //обновляем компонент здоровья босса
     }
     private void Attack_Boss()
     {
         if(Time.time >= lastAttackTime_b1 + attackCooldown_b1)
         {
-            Move_boss();
+            Move_boss(); //всё ещё двигается
             Attack_2?.Invoke(this, EventArgs.Empty);
+            //событие запускает выпуск гранат
             lastAttackTime_b1 = Time.time;
         }
+        //для налаживания регулярности и последоватльности атак
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

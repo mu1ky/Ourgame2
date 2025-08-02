@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.Rendering;
 
+//скрипт должен описывать поведение оружия босса первого уровня
 public class Bullet : MonoBehaviour
 {
     public Vector3 target;
@@ -15,17 +16,21 @@ public class Bullet : MonoBehaviour
     public Rigidbody2D rb;
     public float speed_bullet = 15f;
     public Vector2 direction_bullet;
-    public Transform PointPos;
-    public float CenterX;
-    public float CenterY;
+    public Vector2 PointPos;
+    public float CenterX; //координата x местопложения босса, выпускающего гранату
+    public float CenterY; //координата y местопложения босса, выпускающего гранату
 
+    //
     private void IdentifyTargetOrDirection()
     {
-        if (isGrenada == true)
+        if (isGrenada == true) //если это граната
         {
+            //определяем в какой области находится 
+            //определяем местоположение данной областм
+            //выбираем конечную координату гранаты в её границах
             if (Boss1.Instance.blastAttack_1 == true)
             {
-                area = GameObject.FindGameObjectWithTag("Blast1").transform;
+                area = GameObject.FindGameObjectWithTag("Blast1").transform; 
                 targetPosX = Random.Range(area.position.x - 2.5f, area.position.x + 2.5f);
                 targetPosY = Random.Range(area.position.y - 2.5f, area.position.y + 2.5f);
             }
@@ -50,30 +55,33 @@ public class Bullet : MonoBehaviour
         }
         if (isBullet == true)
         {
-            if (PointPos.position.x - CenterX < (Mathf.Abs(PointPos.position.x - CenterX)/2f))
+            //в зависимости от угла поворта босса и положения пули определяем направление её движения
+            //это надо обсудить!!!!!!!!
+            if (PointPos.x - CenterX < (Mathf.Abs(PointPos.x - CenterX)/2f))
             {
-                if (CenterY - PointPos.position.y < 0f)
+                if (CenterY - PointPos.y < 0f)
                 {
                     direction_bullet = Vector2.up;
                 }
-                if (CenterY - PointPos.position.y > 0f)
+                if (CenterY - PointPos.y > 0f)
                 {
                     direction_bullet = -Vector2.up;
                 }
             }
             else
             {
-                if (CenterY - PointPos.position.y < 0f)
+                if (CenterY - PointPos.y < 0f)
                 {
                     direction_bullet = Vector2.right;
                 }
-                if (CenterY - PointPos.position.y > 0f)
+                if (CenterY - PointPos.y > 0f)
                 {
                     direction_bullet = -Vector2.right;
                 }
             }
         }
     }
+    //перед началом работы определяем вид оружия: пуля или граната
     void Awake()
     {
         if (gameObject.tag == "BulletBoss")
@@ -87,38 +95,46 @@ public class Bullet : MonoBehaviour
             isGrenada = true;
         }
     }
+    //инициализируем компонент физики
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
+    //в этом методе мы описываем движение пули или гранаты
     void FixedUpdate()
     {
+        IdentifyTargetOrDirection();
         if (isGrenada == true)
         {
             rb.MovePosition(new Vector2(targetPosX, targetPosY));
+            //если граната, то мы отправляем её двигаться в определённую координату
         }
         if (isBullet == true)
         {
             rb.velocity = direction_bullet.normalized * speed_bullet;
+            //если пуля, то она двигается по выбранному направлению с определённой скоростью
         }
+        PointPos = PointMoveBoss.Instance.ReturnPosition();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (isBullet == true)
         {
-            if (collision.gameObject.tag == "Player_1")
+            //если наш объект является пулей, то наноси урон нашему герою только в том случае, если пуля попала в него
+            if (collision.gameObject.tag == "Player_1") //считываем тег объекта
             {
-                Player hero = collision.gameObject.GetComponent<Player>();
+                Player hero = collision.gameObject.GetComponent<Player>(); //полаём доступ к компоненту-скрипту игрока
                 if (hero != null)
                 {
-                    hero.TakeDamage_hero(Boss1.Instance.attackDamage);
+                    hero.TakeDamage_hero(Boss1.Instance.attackDamage); //наносим урон
                 }
             }
-            Destroy(gameObject);
+            Destroy(gameObject, 1f); //уничтожаем пулю
         }
         if (isGrenada == true)
         {
-            Destroy(gameObject, 5f);
+            //само нанесение урона прописано в скрипте BlastAttack
+            Destroy(gameObject, 5f); //уничтожаем гранату
         }
     }
 }
