@@ -40,10 +40,13 @@ public class Robot : Enemy_AI
     private Animator animator; //Animator для визуализации
     private Vector3 startingPosition; // Начальная позиция врага
     public LayerMask ignoreLayer_1;
+    public LineRenderer linerenderer;
 
+    /*
     public GameObject pref_2;
     public GameObject bul_robot;
     public float bul_speed_2;
+    */
     public static bool IsRobot = true;
 
     void Start()
@@ -194,12 +197,23 @@ public class Robot : Enemy_AI
                     Debug.Log("Attack! Damage: " + hit.collider.tag);
                     player_1.TakeDamage_hero(attackDamage);
                     player_1.TakeHP_hero();
+                    /*
                     bul_robot = Instantiate(pref_2, shootpoint.position, Quaternion.identity);
                     if (bul_robot != null)
                     {
                         bul_robot.GetComponent<Rigidbody2D>().velocity = shootingDirection * bul_speed_2;
                     }
+                    */
                 }
+                linerenderer.SetPosition(0, shootpoint.position);
+                linerenderer.SetPosition(1, hit.point);
+                linerenderer.enabled = true;
+                Invoke("StopLine_1", 0.05f);
+            }
+            else
+            {
+                linerenderer.SetPosition(0, shootpoint.position);
+                linerenderer.SetPosition(1, shootpoint.position + new Vector3(shootingDirection.x, shootingDirection.y, 0) * 5);
             }
             lastAttackTime = Time.time;
         }

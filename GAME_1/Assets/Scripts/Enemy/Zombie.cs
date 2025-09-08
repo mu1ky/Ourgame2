@@ -6,6 +6,7 @@ using UnityEngine;
 public class Zombie : Enemy_AI
 {
     public float moveSpeed = 2f; // Скорость движения врага
+    public float attackDamage = 10f; //Урон от атаки
     public float attackRange = 2.5f; // Дальность атаки
     public float attackCooldown = 1f; // Время между атаками
     public float chaseDistance = 5f; // Расстояние преследования

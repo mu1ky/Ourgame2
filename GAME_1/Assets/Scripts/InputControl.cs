@@ -6,11 +6,15 @@ public class InputControl : MonoBehaviour
 {
     public static InputControl Instance { get; private set; }
     private bool isGetSpace;
+    public bool isAlreadyGetSpace;
     public bool IsGetSpace_()
     {
         return isGetSpace;
     }
-
+    public bool IsAlreadyGetSpace_()
+    {
+        return isAlreadyGetSpace;
+    }
     private void Awake()
     {
         Instance = this;
@@ -18,6 +22,7 @@ public class InputControl : MonoBehaviour
     private void Start()
     {
         isGetSpace = false;
+        isAlreadyGetSpace = false;
     }
     void Update()
     {
@@ -28,6 +33,11 @@ public class InputControl : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             isGetSpace = false;
+            isAlreadyGetSpace = false;
+        }
+        if (Input.GetKey(KeyCode.Space))
+        {
+            isAlreadyGetSpace = true;
         }
     }
 }

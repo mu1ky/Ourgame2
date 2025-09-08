@@ -174,6 +174,7 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         HandleMovement();
+        moving_mode();
     }
     private void Update()
     {
@@ -408,10 +409,11 @@ public class Player : MonoBehaviour
                 if ((collision.gameObject.tag == "Enemy") && (collision.gameObject.GetComponent<Zombie>() != null))
                 {
                     Enemy_1 en = collision.gameObject.GetComponent<Enemy_1>();
+                    Zombie zom = collision.gameObject.GetComponent<Zombie>();
                     if (en != null)
                     {
-                        Debug.Log("Attack! Damage: " + en.attackDamage);
-                        TakeDamage_hero(en.attackDamage);
+                        Debug.Log("Attack! Damage: " + zom.attackDamage);
+                        TakeDamage_hero(zom.attackDamage);
                         TakeHP_hero();
                     }
                 }
@@ -452,10 +454,11 @@ public class Player : MonoBehaviour
                 if ((collision.gameObject.tag == "Enemy") && (collision.gameObject.GetComponent<Zombie>() != null))
                 {
                     Enemy_1 en = collision.gameObject.GetComponent<Enemy_1>();
+                    Zombie zom = collision.gameObject.GetComponent<Zombie>();
                     if (en != null)
                     {
-                        Debug.Log("Attack! Damage: " + en.attackDamage);
-                        TakeDamage_hero(en.attackDamage);
+                        Debug.Log("Attack! Damage: " + zom.attackDamage);
+                        TakeDamage_hero(zom.attackDamage);
                         TakeHP_hero();
                     }
                 }

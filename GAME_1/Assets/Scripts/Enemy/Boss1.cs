@@ -41,6 +41,11 @@ public class Boss1: MonoBehaviour
     public event EventHandler Attack_1;
     public event EventHandler Attack_2;
 
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     //инициализируем необходимые компоненты
     void Start()
     {
@@ -48,6 +53,7 @@ public class Boss1: MonoBehaviour
         animator = GetComponent<Animator>(); // ѕолучаем компонент Animator
         player = GameObject.FindGameObjectWithTag("Player_1").transform; // Ќаходим игрока по тегу
         Health_1 = GetComponent<Enemy_2>().boss_health;
+        startingPosition = transform.position;
     }
     //описание движени€ босса по комнате
     //движение будет происходить по одной координате

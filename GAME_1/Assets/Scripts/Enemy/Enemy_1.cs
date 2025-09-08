@@ -5,12 +5,24 @@ using System;
 
 public class Enemy_1 : MonoBehaviour
 {
-    public float health_enemy = 100f; // Здоровье врага
-    public float attackDamage = 10f; // Урон от атаки
+    public float health_enemy = 0f; // Здоровье врага
+    public float HP_enemy = 1f;
     //public static Action Get_Damage_enemy;
+    private void Awake()
+    {
+        if (GetComponent<Zombie>() != null || GetComponent<Robot>() != null || GetComponent<Mobe_2>() != null)
+        {
+            health_enemy = 100f;
+        }
+        if (GetComponent<Boss1>() != null || GetComponent<ButtonBoss>() != null)
+        {
+            health_enemy = 1000f;
+        }
+    }
     public void TakeDamage_enemy(float damage)
     {
         health_enemy -= damage;
+        HP_enemy -= damage / 100f;
         Debug.Log("Enemy takes damage: " + damage + ". Current health: " + health_enemy);
         //Get_Damage_enemy?.Invoke();
 

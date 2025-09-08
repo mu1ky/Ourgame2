@@ -217,9 +217,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shotpoint: {fileID: 7084907383876063817}
   attackCooldown_hero: 1
+  attackCooldown_hero_1: 1
   dam: 1
   DamageEffect: {fileID: 0}
-  pref_1: {fileID: 0}
+  pref_bull: {fileID: 4417285741841238582, guid: fd67d99daeb6ac54fad7db91e4895a67, type: 3}
   bul_hero: {fileID: 0}
   bul_speed_1: 0
   isAttacking: 0
